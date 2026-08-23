@@ -1,0 +1,209 @@
+@use 'lib' as *;
+
+.advantages {
+	$self: &;
+
+	margin-bottom: fluid(150px, 100px);
+
+	&__container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: fluid(50px, 20px);
+
+		@include media("<=lg") {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__card {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		gap: fluid(24px, 16px);
+		width: 100%;
+		min-height: 350px;
+		overflow: hidden;
+		padding: 28px 32px 32px 32px;
+
+		@include media("<=xs") {
+			padding: 20px 20px 0 20px;
+			gap: 0;
+
+			.advantages__card-bg {
+				/* Переключаем маску под компактный угол 44px из мобильного SVG */
+				mask-image:
+					linear-gradient(#000, #000),
+					url("data:image/svg+xml;charset=utf-8,<svg width='44' height='450' viewBox='276 0 44 450' preserveAspectRatio='none' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M276.492 0C278.763 0 280.966 0.772807 282.739 2.19131L316.247 28.9976C318.619 30.8953 320 33.7684 320 36.8062V440C320 445.523 315.523 450 310 450H276V0H276.492Z' fill='black'/></svg>");
+
+				/* Нахлест 2px для защиты от полосы: calc(100% - 42px) */
+				mask-size: calc(100% - 42px) 100%, 44px 100%;
+			}
+		}
+
+		&-content,
+		&-image {
+			position: relative;
+			z-index: 2;
+		}
+
+		&-bg {
+			position: absolute;
+			inset: 0;
+			z-index: 1;
+			border-radius: 10px 0 0 10px;
+			background: radial-gradient(circle at 100% 0%, #7A7A7D 0%, rgba(122, 122, 125, 0.4) 15%, var(--card-color) 35%);
+			transition: all var(--transition, 0.3s);
+
+			/* Десктопная маска (угол 70px) */
+			mask-image:
+				linear-gradient(#000, #000),
+				url("data:image/svg+xml;charset=utf-8,<svg width='70' height='350' viewBox='513 0 70 350' preserveAspectRatio='none' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M514.492 0C516.763 0 518.966 0.772808 520.739 2.19131L579.247 48.9976C581.619 50.8953 583 53.7684 583 56.8062V340C583 345.523 578.523 350 573 350H513V0H514.492Z' fill='black'/></svg>");
+
+			mask-size: calc(100% - 68px) 100%, 70px 100%;
+			mask-position: left center, right center;
+			mask-repeat: no-repeat;
+
+			&::after {
+				content: '';
+				position: absolute;
+				inset: 1px;
+				background: var(--card-color);
+				z-index: 1;
+				border-radius: inherit;
+				transition: all var(--transition);
+
+				mask-image: inherit;
+				mask-size: inherit;
+				mask-position: inherit;
+				mask-repeat: inherit;
+			}
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: -40px;
+				right: -40px;
+				width: 120px;
+				height: 120px;
+				border-radius: 50%;
+				background: #FF5A00;
+				filter: blur(40px);
+				opacity: 0;
+				z-index: 2;
+				pointer-events: none;
+				transition: all var(--transition);
+			}
+		}
+
+		&:hover {
+			.advantages__card-bg {
+				background: radial-gradient(circle at 100% 0%, #FF5A00 0%, rgba(255, 90, 0, 0.6) 20%, var(--card-color) 35%);
+
+				&::before {
+					opacity: 0.7;
+				}
+			}
+
+			.advantages__card-image svg,
+			div[class*="-image"] svg {
+				filter: drop-shadow(0 0 15px rgba(239, 107, 33, 0.6));
+
+				path {
+					stroke: var(--orange, #FF5A00);
+					fill: var(--orange, #FF5A00);
+				}
+			}
+		}
+	}
+
+	&__card-content {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	&__card-title {
+		font-size: fluid(32px, 20px);
+		font-weight: 700;
+		text-transform: uppercase;
+		max-width: 417px;
+		margin-bottom: fluid(16px, 8px);
+
+		b {
+			font-weight: 700;
+			color: var(--orange);
+		}
+	}
+
+	&__card-desc {
+		max-width: 386px;
+		color: var(--text-color-second);
+		margin-bottom: 20px;
+		font-size: fluid(16px, 14px);
+	}
+
+	&__card-list {
+		margin-top: auto;
+		max-width: 338px;
+		display: flex;
+		flex-direction: column;
+		gap: fluid(16px, 12px);
+	}
+
+	&__card-list-item {
+		display: flex;
+		flex-direction: row;
+		gap: 10px;
+		font-size: fluid(16px, 14px);
+
+		&::before {
+			content: '';
+			display: block;
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			background: var(--orange);
+			margin-top: 8px;
+		}
+	}
+
+	&__card-image {
+		position: absolute;
+		bottom: 13px;
+		right: -85px;
+
+		svg {
+			filter: none;
+			transition: filter var(--transition);
+
+			// Отключаем встроенные SVG-тени (например, у второй карточки),
+			// чтобы свечение появлялось только при наведении
+			[filter] {
+				filter: none;
+			}
+
+			path {
+				transition: all var(--transition);
+				stroke: var(--text-color-second);
+				fill: var(--text-color-second);
+			}
+		}
+
+		@include media("<=xs") {
+			position: static;
+			bottom: auto;
+			right: auto;
+			margin-bottom: -24px;
+
+			svg {
+				object-fit: contain;
+			}
+
+			max-width: none;
+			width: calc(100% + 40px);
+			transform: translateX(-20px);
+		}
+	}
+
+}

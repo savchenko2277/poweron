@@ -1,0 +1,55 @@
+@use 'lib' as *;
+
+.navigation-bar {
+	$self: &;
+
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding-top: 12.5px;
+	padding-bottom: 28px;
+	background: var(--card-color);
+	border-top: 1px solid var(--devider-color);
+	display: none;
+	transition: background var(--transition);
+	z-index: 20;
+
+	@include media("<=lg") {
+		display: block;
+	}
+
+	&__container {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-around;
+		gap: 36px;
+	}
+
+	&__button {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 4px;
+		font-size: 12px;
+		font-weight: 500;
+		transition: all var(--transition);
+
+		&.active {
+			color: var(--orange);
+
+			svg {
+				fill: var(--orange);
+			}
+		}
+
+		svg {
+			height: 22px;
+			width: 22px;
+			fill: var(--text-color);
+			transition: all var(--transition);
+		}
+	}
+
+}

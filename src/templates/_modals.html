@@ -1,0 +1,142 @@
+<div class="production-modal" data-scroll-padding>
+    <div class="production-modal__container container">
+        <div class="production-modal__columns" data-modal-content>
+            <div class="production-modal__content">
+                <h3 class="production-modal__title">
+                    Продукция <span>POWERON</span>
+                </h3>
+                <div class="production-modal__items">
+                    <a href="#" class="production-modal__item">
+                        <h4 class="production-modal__item-title">Газовые генераторы</h4>
+                        <img src="./img/products/1.webp" alt="" class="production-modal__image">
+                    </a>
+                    <a href="#" class="production-modal__item production-modal__item_soon">
+                        <h4 class="production-modal__item-title">Дизельные генераторы</h4>
+                        <img src="./img/products/2.webp" alt="" class="production-modal__image">
+                    </a>
+                    <a href="#" class="production-modal__item production-modal__item_soon">
+                        <h4 class="production-modal__item-title">Бензиновые генераторы</h4>
+                        <img src="./img/products/3.webp" alt="" class="production-modal__image">
+                    </a>
+                    <a href="#" class="production-modal__item production-modal__item_soon">
+                        <h4 class="production-modal__item-title">Портативные электростанции</h4>
+                        <img src="./img/products/4.webp" alt="" class="production-modal__image">
+                    </a>
+                    <a href="#" class="production-modal__item">
+                        <h4 class="production-modal__item-title">Аксессуары</h4>
+                        <img src="./img/products/5.webp" alt="" class="production-modal__image">
+                    </a>
+                </div>
+            </div>
+            <div class="production-modal__side">
+                <div class="production-modal__about">
+                    <h3 class="production-modal__side-title">
+                        Не уверены,<br> что выбрать?
+                    </h3>
+                    <p class="production-modal__side-text">
+                        Короткий опрос поможет с выбором модели под ваш объект
+                    </p>
+                    <button type="button" class="production-modal__side-btn button button_orange">
+                        <span class="button__bg"></span>
+                        Начать подбор
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="search-modal" data-scroll-padding>
+    <div class="search-modal__container container">
+        <div class="search-modal__content" data-modal-content>
+            <form class="search-modal__search" action="/" method="get">
+                <input placeholder="Ключевое слово" type="text">
+                <button type="submit">
+                    <svg>
+                        <use xlink:href="#search"></use>
+                    </svg>
+                </button>
+            </form>
+            <div class="search-modal__results">
+                <div class="search-modal__row">
+                    <h4 class="search-modal__row-title">Продукция</h4>
+                    <ul class="search-modal__list">
+                        <li class="search-modal__list-item"><a href="#">Газовый генератор. POWERON GGC9000</a></li>
+                    </ul>
+                </div>
+                <div class="search-modal__row">
+                    <h4 class="search-modal__row-title">Документы</h4>
+                    <ul class="search-modal__list">
+                        <li class="search-modal__list-item"><a href="#">Инструкция GGC9000</a></li>
+                        <li class="search-modal__list-item"><a href="#">Паспорт GGC9000</a></li>
+                        <li class="search-modal__list-item"><a href="#">Паспорт 2</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function () {
+        const ACTIVE = 'active';
+        const LOCK = 'scroll-lock';
+        const CONTENT_ATTR = 'data-modal-content';
+
+        let modal = null;
+        let button = null;
+
+        const close = () => {
+            if (!modal) return;
+            modal.classList.remove(ACTIVE);
+            button && button.classList.remove(ACTIVE);
+            document.body.classList.remove(LOCK);
+
+            const nav = document.querySelector('.navigation-bar');
+            if (nav) nav.style.removeProperty('z-index');
+
+            modal = null;
+            button = null;
+        };
+
+        const open = (btn) => {
+            const target = document.querySelector(btn.dataset.searchOpen);
+            if (!target) return;
+
+            close();
+
+            modal = target;
+            button = btn;
+            modal.classList.add(ACTIVE);
+            button.classList.add(ACTIVE);
+            document.body.classList.add(LOCK);
+
+            const nav = document.querySelector('.navigation-bar');
+            if (nav) nav.style.zIndex = '4';
+        };
+
+        document.addEventListener('click', (e) => {
+            const btn = e.target.closest('[data-search-open]');
+
+            if (btn) {
+                e.preventDefault();
+                open(btn);
+                return;
+            }
+
+            if (
+                modal &&
+                !e.target.closest('[' + CONTENT_ATTR + ']') &&
+                !e.target.closest('.header__search')
+            ) {
+                close();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (modal && (e.key === 'Escape' || e.key === 'Esc')) {
+                close();
+            }
+        });
+    })();
+</script>

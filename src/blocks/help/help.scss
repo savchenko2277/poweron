@@ -1,0 +1,109 @@
+@use 'lib' as *;
+
+.help {
+	$self: &;
+
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	max-width: 1374px;
+	margin: 0 auto 150px;
+	background: var(--card-color);
+	border-radius: 10px;
+	overflow: hidden;
+
+	@include media("<=lg") {
+		border-radius: 0;
+		margin-bottom: 0;
+	}
+
+	&__gradient {
+		position: absolute;
+		inset: 1px;
+		z-index: 0;
+		border-radius: 12px;
+		padding: 2px;
+		pointer-events: none;
+
+		background:
+			linear-gradient(231deg, #7A7A7D 0%, rgba(122, 122, 125, 0.4) 10%, transparent 28%),
+			linear-gradient(51deg, #7A7A7D 0%, rgba(122, 122, 125, 0.4) 12%, #161619 30%);
+
+		mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+		mask-composite: exclude;
+
+		@include media("<=lg") {
+			display: none;
+		}
+	}
+
+	&__container {
+		position: relative;
+		z-index: 1;
+		padding: 80px 0;
+
+		@include media("<=lg") {
+			padding-top: 50px;
+			padding-bottom: 20px;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		position: relative;
+		z-index: 1;
+
+		@include media("<=lg") {
+			flex-direction: column;
+			align-items: start;
+		}
+	}
+
+	&__about {}
+
+	&__title {
+		margin-bottom: fluid(28px, 20px);
+
+		b {
+			color: var(--orange);
+		}
+	}
+
+	&__desc {
+		font-size: fluid(16px, 14px);
+
+		@include media("<=lg") {
+			margin-bottom: 28px;
+		}
+
+		@include media("<=xs") {
+			color: var(--text-color-second);
+		}
+	}
+
+	&__btn {
+		@include media("<=xs") {
+			width: 100%;
+		}
+	}
+
+	&__image {
+		position: absolute;
+		width: fluid(378px, 358px);
+		max-width: none;
+		top: -20px;
+		right: 0;
+		opacity: 0.3;
+
+		@include media("<=lg") {
+			opacity: 1;
+			position: static;
+			top: auto;
+			right: auto;
+			margin-left: auto;
+		}
+	}
+}

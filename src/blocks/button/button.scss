@@ -1,0 +1,84 @@
+@use 'lib' as *;
+
+.button {
+    $self: &;
+
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: fluid(18px, 16px) 40px;
+    font-size: fluid(18px, 14px);
+    font-weight: 700;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    transition: all var(--transition, 0.3s);
+
+    /* Общие стили подложки */
+    &__bg {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        border-radius: 10px 0 0 10px;
+        transition: all var(--transition, 0.3s);
+
+        /* SVG с добаленным preserveAspectRatio='none' */
+        mask-image:
+            linear-gradient(#000, #000),
+            url("data:image/svg+xml;charset=utf-8,<svg width='35' height='58' viewBox='185 0 35 58' preserveAspectRatio='none' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M191.492 0C193.763 0 195.966 0.772807 197.739 2.19131L216.247 16.9976C218.619 18.8953 220 21.7684 220 24.8062V48C220 53.5228 215.523 58 210 58H185V0H191.492Z' fill='black'/></svg>");
+        
+        mask-size: calc(100% - 33px) 100%, 35px 100%;
+        mask-position: left center, right center;
+        mask-repeat: no-repeat;
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 1px;
+            background: var(--card-color);
+            border-radius: 9px 0 0 9px;
+            z-index: 1;
+
+            mask-image: inherit;
+            mask-size: inherit;
+            mask-position: inherit;
+            mask-repeat: inherit;
+        }
+    }
+
+    &_grey {
+        .button__bg {
+            background: var(--devider-color);
+        }
+
+        &:hover {
+            color: var(--orange);
+
+            .button__bg {
+                background: var(--orange);
+            }
+        }
+    }
+
+    &_orange {
+        color: var(--orange);
+        .button__bg {
+            background: var(--orange, #EF6B21);
+        }
+
+        &:hover {
+            filter: drop-shadow(0px 0px 20px rgba(239, 107, 33, 0.6));
+        }
+    }
+
+    &_small {
+        padding: fluid(20px, 16px) 32px;
+
+        .button__bg {
+            /* Фиксируем ширину угла в 35px + нахлест левой части в 2px: calc(100% - 33px) */
+            mask-size: calc(100% - 33px) 100%, 35px 100%;
+        }
+    }
+}

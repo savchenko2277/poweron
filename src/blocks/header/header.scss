@@ -1,0 +1,265 @@
+@use 'lib' as *;
+
+html[data-theme="light"] {
+	.header__control::after {
+		transform: translateX(calc(100% + 4px));
+	}
+
+	.header__logo-img {
+		&--dark {
+			display: none;
+		}
+
+		&--light {
+			animation: fadeIn forwards;
+			display: block;
+		}
+	}
+}
+
+.header {
+	$self: &;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: var(--bg-color);
+	transition: color, background var(--transition);
+	z-index: 10;
+
+	&__container {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 50px;
+		padding: 20px 0;
+
+		@include media("<=xlg") {
+			gap: 24px;
+		}
+	}
+
+	&__logo {
+		display: inline-flex;
+		align-items: center;
+	}
+
+	&__logo-img {
+		height: 51px;
+		object-fit: contain;
+		display: block;
+
+		&--light {
+			display: none;
+		}
+
+		@include media("<=xs") {
+			height: 42px;
+		}
+	}
+
+	&__logo-img--dark {}
+
+	&__logo-img--light {}
+
+	&__navigation {
+		@include media("<=lg") {
+
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 28px;
+	}
+
+	&__list-item {
+
+		text-align: center;
+		font-size: 18px;
+		transition: all var(--transition);
+
+		&.active {
+			color: var(--orange);
+
+			svg {
+				stroke: var(--orange);
+			}
+		}
+
+		a {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			gap: 5px;
+
+			@include media("<=lg") {
+				justify-content: space-between;
+			}
+		}
+
+		svg {
+			width: 16px;
+			height: 16px;
+			fill: transparent;
+			stroke: var(--text-color);
+			display: none;
+			transition: all var(--transition);
+
+			@include media("<=lg") {
+				display: block;
+				transform: rotate(270deg);
+			}
+		}
+
+		&_pc {
+			svg {
+				display: block;
+			}
+
+			@include media("<=lg") {
+				display: none;
+			}
+		}
+	}
+
+	&__side {
+		display: flex;
+		flex-direction: row;
+		gap: 10px;
+		margin-left: auto;
+		flex: 1 1 auto;
+		justify-content: end;
+	}
+
+	&__control {
+		display: flex;
+		flex-direction: row;
+		gap: 4px;
+		padding: 5px;
+		background: var(--input-color);
+		border-radius: 10px;
+		position: relative;
+		transition: color, background var(--transition);
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 5px;
+			left: 5px;
+			width: 40px;
+			height: 40px;
+			border-radius: 5px;
+			background: var(--orange);
+			transition: var(--transition)
+		}
+	}
+
+	&__control-button {
+		@include flex-center;
+
+		position: relative;
+		z-index: 2;
+		width: 40px;
+		height: 40px;
+
+		svg {
+			width: 24px;
+			height: 24px;
+			fill: var(--text-color);
+			transition: fill var(--transition);
+		}
+
+	}
+
+	&__search {
+		width: 100%;
+		flex: 1 1 auto;
+		max-width: 220px;
+		height: 50px;
+		background: var(--input-color);
+		position: relative;
+		transition: color, background var(--transition);
+
+		border-radius: 10px 0 0 10px;
+
+		-webkit-mask-image: url('data:image/svg+xml;utf8,<svg width="220" height="50" viewBox="0 0 220 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M191.492 0C193.763 0 195.966 0.772807 197.739 2.19131L216.247 16.9976C218.619 18.8953 220 21.7684 220 24.8062V40C220 45.5228 215.523 50 210 50H10C4.47716 50 0 45.5228 0 40V10C0 4.47715 4.47715 0 10 0H191.492Z" fill="black"/></svg>');
+		mask-image: url('data:image/svg+xml;utf8,<svg width="220" height="50" viewBox="0 0 220 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M191.492 0C193.763 0 195.966 0.772807 197.739 2.19131L216.247 16.9976C218.619 18.8953 220 21.7684 220 24.8062V40C220 45.5228 215.523 50 210 50H10C4.47716 50 0 45.5228 0 40V10C0 4.47715 4.47715 0 10 0H191.492Z" fill="black"/></svg>');
+
+		-webkit-mask-size: 220px 100%;
+		mask-size: 220px 100%;
+
+		-webkit-mask-position: right center;
+		mask-position: right center;
+
+		-webkit-mask-repeat: no-repeat;
+		mask-repeat: no-repeat;
+
+		@include media("<=xs") {
+			order: -1;
+
+			max-width: 50px;
+			background: transparent;
+			border: none;
+			border-radius: 0;
+
+			-webkit-mask-image: none;
+			mask-image: none;
+
+			background-image: url('data:image/svg+xml;utf8,<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M29.8579 0.5C32.3776 0.5 34.7937 1.50089 36.5754 3.28259L46.7176 13.4248C48.4993 15.2065 49.5 17.6226 49.5 20.1421V40C49.5 45.2467 45.2467 49.5 40 49.5H10C4.75329 49.5 0.5 45.2467 0.5 40V10C0.5 4.75329 4.75329 0.5 10 0.5H29.8579Z" stroke="%233E3E41"/></svg>');
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		input {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			padding: 0 45px 0 20px;
+			color: var(--text-color);
+			background: transparent;
+			border: none;
+			outline: none;
+
+			&::placeholder {
+				color: var(--text-color-second);
+			}
+
+			@include media("<=xs") {
+				display: none;
+			}
+		}
+
+		button {
+			@include flex-center;
+
+			position: absolute;
+			right: 0;
+			top: 0;
+			aspect-ratio: 1 / 1;
+			height: 100%;
+			z-index: 2;
+			background: transparent;
+			border: none;
+			cursor: pointer;
+		}
+
+		svg {
+			width: 24px;
+			height: 24px;
+			fill: var(--text-color-second);
+			transition: fill var(--transition);
+			transform: translateX(-5px);
+
+			@include media("<=xs") {
+				transform: translateX(0);
+				/* Сбрасываем смещение, чтобы иконка была по центру */
+			}
+		}
+	}
+
+}

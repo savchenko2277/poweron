@@ -1,0 +1,7 @@
+@use 'lib' as *;
+
+.main {
+	$self: &;
+
+	padding-top: 90px;
+}

@@ -1,0 +1,40 @@
+$matches: (
+	xxxxlg: 1920,
+	xxxlg: 1680,
+	xxlg: 1440,
+	xlg: 1280,
+	lg: 1100,
+	md: 960,
+	sm: 780,
+	xs: 640,
+	xxs: 480,
+	xxxs: 360
+);
+
+:root {
+
+	// -- Обычные переменные
+	--text-size: 16px;
+	--transition: 0.3s ease-in-out;
+	--transition-theme: 0.1s ease;
+	--container-width: 1216px;
+	--orange: #FF5A00;
+	
+	// -- Динамические переменные
+	--bg-color: #0B0C0D;
+	--text-color: #D8D8D8;
+	--input-color: #292A2B;
+	--text-color-second: #7A7A7D;
+	--card-color: #161619;
+	--devider-color: #3E3E41;
+}
+
+html[data-theme="light"] {
+
+  --bg-color: #FFFFFF;
+  --text-color: #161619;
+  --input-color: #D7D7D7;
+  --card-color: #EBEBEB;
+  --devider-color: #B9B9B9;
+
+}

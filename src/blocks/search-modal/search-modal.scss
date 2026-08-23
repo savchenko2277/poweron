@@ -1,0 +1,169 @@
+@use 'lib' as *;
+
+.search-modal {
+	$self: &;
+
+	position: fixed;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+	padding-top: 90px;
+
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transition: all var(--transition);
+
+	@include media("<=xs") {
+		background: #0B0C0D95;
+	}
+
+	&.active {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: all;
+
+		#{$self}__container {
+			transform: translateY(0);
+		}
+	}
+
+	&__container {}
+
+	&__content {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	&__results {
+		border-radius: 10px;
+		padding: fluid(36px, 20px);
+		background: var(--card-color);
+		display: flex;
+		flex-direction: column;
+		gap: fluid(36px, 20px);
+		width: 100%;
+
+		@include media("<=xs") {
+			background: var(--input-color);
+		}
+	}
+
+	&__row {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	&__row-title {
+		color: var(--text-color-second);
+		margin-bottom: fluid(36px, 20px);
+		font-size: fluid(16px, 12px);
+	}
+
+	&__list {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: fluid(28px, 16px);
+	}
+
+	&__list-item {
+		width: 100%;
+	}
+
+	&__list-item a {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 10px;
+		font-size: fluid(20px, 16px);
+		font-weight: 700;
+		padding-bottom: 16px;
+		border-bottom: 1px solid var(--devider-color);
+		width: 100%;
+		transition: all var(--transition);
+
+		&:hover {
+			color: var(--orange);
+			border-color: var(--orange);
+		}
+
+		&::before {
+			content: '';
+			display: block;
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			background: var(--orange);
+		}
+	}
+
+	&__search {
+		display: none;
+
+		width: 100%;
+		flex: 1 1 auto;
+		height: 50px;
+		background: var(--input-color);
+		position: relative;
+		transition: color, background var(--transition);
+
+		border-radius: 10px 0 0 10px;
+
+		/* Составная маска для 100% ширины без деформации угла */
+		mask-image:
+			linear-gradient(#000, #000),
+			url('data:image/svg+xml;utf8,<svg width="30" height="50" viewBox="190 0 30 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M191.492 0C193.763 0 195.966 0.772807 197.739 2.19131L216.247 16.9976C218.619 18.8953 220 21.7684 220 24.8062V40C220 45.5228 215.523 50 210 50H190V0H191.492Z" fill="black"/></svg>');
+
+		mask-size: calc(100% - 29px) 100%, 30px 100%;
+		mask-position: left center, right center;
+		mask-repeat: no-repeat;
+
+		@include media("<=xs") {
+			display: block;
+			width: 100%;
+		}
+
+		input {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			padding: 0 45px 0 20px;
+			color: var(--text-color);
+			background: transparent;
+			border: none;
+			outline: none;
+
+			&::placeholder {
+				color: var(--text-color-second);
+			}
+		}
+
+		button {
+			@include flex-center;
+
+			position: absolute;
+			right: 0;
+			top: 0;
+			aspect-ratio: 1 / 1;
+			height: 100%;
+			z-index: 2;
+			background: transparent;
+			border: none;
+			cursor: pointer;
+		}
+
+		svg {
+			width: 24px;
+			height: 24px;
+			fill: var(--text-color-second);
+			transition: fill var(--transition);
+			transform: translateX(-5px);
+		}
+	}
+
+}

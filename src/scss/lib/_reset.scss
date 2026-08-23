@@ -1,0 +1,495 @@
+// ==========================================================================
+// Базовый сброс стилей (Reset)
+// ==========================================================================
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// Сброс отступов у блочных и текстовых элементов
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+select,
+optgroup,
+p,
+blockquote,
+th,
+td,
+figure,
+figcaption {
+	margin: 0;
+	padding: 0;
+}
+
+// ==========================================================================
+// Заголовки
+// ==========================================================================
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+
+// ==========================================================================
+// Списки
+// ==========================================================================
+ul,
+ol {
+	list-style: none;
+}
+
+// ==========================================================================
+// Ссылки
+// ==========================================================================
+a {
+	text-decoration: none;
+	color: inherit;
+	background-color: transparent;
+	outline: none;
+	-webkit-text-decoration-skip: objects;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+// ==========================================================================
+// Медиа
+// ==========================================================================
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+	border-style: none;
+	vertical-align: middle;
+}
+
+svg {
+	vertical-align: middle;
+}
+
+iframe {
+	border: 0;
+}
+
+// ==========================================================================
+// Таблицы
+// ==========================================================================
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+caption,
+th {
+	text-align: left;
+}
+
+// ==========================================================================
+// Семантические элементы
+// ==========================================================================
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+	display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+template,
+[hidden] {
+	display: none;
+}
+
+// ==========================================================================
+// Текстовые элементы
+// ==========================================================================
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var,
+i,
+b {
+	font-style: normal;
+	font-weight: normal;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+mark {
+	background: none;
+	color: inherit;
+}
+
+small {
+	font-size: 80%;
+}
+
+sub,
+sup {
+	position: relative;
+	font-size: 75%;
+	line-height: 0;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+pre,
+code,
+kbd,
+samp {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+
+abbr[title] {
+	border-bottom: none;
+	text-decoration: underline;
+	text-decoration: underline dotted;
+}
+
+hr {
+	box-sizing: content-box;
+	height: 0;
+	margin: 0;
+	border: 0;
+	border-top: 1px solid currentColor;
+}
+
+blockquote,
+q {
+	quotes: none;
+
+	&::before,
+	&::after {
+		content: '';
+		content: none;
+	}
+}
+
+// ==========================================================================
+// Формы: инпуты, кнопки, textarea, select и т.д.
+// ==========================================================================
+input,
+button,
+textarea,
+select,
+optgroup {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: none;
+	box-shadow: none;
+	outline: none;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	color: inherit;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+input {
+	outline: none;
+
+	&[type='text'],
+	&[type='email'],
+	&[type='tel'],
+	&[type='url'],
+	&[type='password'],
+	&[type='search'],
+	&[type='number'],
+	&[type='date'],
+	&[type='time'],
+	&[type='datetime-local'],
+	&[type='month'],
+	&[type='week'] {
+		appearance: none;
+		-webkit-appearance: none;
+	}
+
+	// Убираем крестик/стрелки в поиске и числовых полях
+	&[type='search'] {
+		appearance: none;
+		-webkit-appearance: none;
+
+		&::-webkit-search-decoration,
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-results-button,
+		&::-webkit-search-results-decoration {
+			display: none;
+		}
+	}
+
+	&[type='number'] {
+		appearance: textfield;
+		-moz-appearance: textfield;
+
+		&::-webkit-inner-spin-button,
+		&::-webkit-outer-spin-button {
+			margin: 0;
+			appearance: none;
+			-webkit-appearance: none;
+		}
+	}
+
+	&[type='checkbox'],
+	&[type='radio'] {
+		margin: 0;
+		padding: 0;
+		border: none;
+		background: none;
+		box-shadow: none;
+		outline: none;
+		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+	}
+
+	&[type='file'] {
+		&::-webkit-file-upload-button {
+			font-family: inherit;
+		}
+	}
+
+	// Убираем стандартный бегунок у range
+	&[type='range'] {
+		margin: 0;
+		padding: 0;
+		border: none;
+		background: transparent;
+
+		&::-webkit-slider-thumb {
+			appearance: none;
+			-webkit-appearance: none;
+			background: none;
+			border: none;
+		}
+
+		&::-moz-range-thumb {
+			appearance: none;
+			background: none;
+			border: none;
+		}
+	}
+
+	&::placeholder {
+		opacity: 1;
+		color: inherit;
+	}
+
+	&::-webkit-input-placeholder {
+		opacity: 1;
+		color: inherit;
+	}
+
+	&::-moz-placeholder {
+		opacity: 1;
+		color: inherit;
+	}
+
+	&:-ms-input-placeholder {
+		opacity: 1;
+		color: inherit;
+	}
+}
+
+textarea {
+	overflow: auto;
+	resize: none;
+	outline: none;
+
+	&::placeholder {
+		opacity: 1;
+		color: inherit;
+	}
+
+	&::-webkit-input-placeholder {
+		opacity: 1;
+		color: inherit;
+	}
+
+	&::-moz-placeholder {
+		opacity: 1;
+		color: inherit;
+	}
+
+	&:-ms-input-placeholder {
+		opacity: 1;
+		color: inherit;
+	}
+}
+
+select {
+	outline: none;
+
+	// Убираем стандартную стрелку
+	&:not([multiple]) {
+		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+	}
+
+	&::-ms-expand {
+		display: none;
+	}
+}
+
+button {
+	cursor: pointer;
+	outline: none;
+	border: none;
+	background: none;
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	text-transform: none;
+	overflow: visible;
+	user-select: none;
+	-webkit-user-select: none;
+
+	&:disabled {
+		cursor: not-allowed;
+	}
+
+	&:focus-visible {
+		outline: none;
+	}
+}
+
+label {
+	cursor: pointer;
+}
+
+fieldset {
+	border: 0;
+}
+
+legend {
+	display: table;
+	max-width: 100%;
+	padding: 0;
+	white-space: normal;
+	color: #000;
+}
+
+// ==========================================================================
+// Фокус и доступность
+// ==========================================================================
+:focus {
+	outline: none;
+}
+
+:focus-visible {
+	outline: 0;
+}
+
+// ==========================================================================
+// Базовые утилиты
+// ==========================================================================
+*::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+[type='button'],
+[type='reset'],
+[type='submit'] {
+	appearance: none;
+	-webkit-appearance: none;
+	cursor: pointer;
+}
+
+button,
+input {
+	&::-moz-focus-inner {
+		padding: 0;
+		border: 0;
+	}
+}

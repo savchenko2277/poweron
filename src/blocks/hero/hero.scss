@@ -1,0 +1,130 @@
+@use 'lib' as *;
+
+html[data-theme="light"] {
+	.hero__image {
+		img:nth-child(1) {
+			display: none;
+		}
+
+		img:nth-child(2) {
+			display: block;
+		}
+	}
+	.hero__title, .hero__text {
+		color: var(--bg-color);
+
+		@include media("<=xs") {
+			color: inherit;
+		}
+	}
+}
+
+.hero {
+	$self: &;
+
+	margin: 0 auto;
+	margin-bottom: 50px;
+	padding: 0 20px;
+
+	position: relative;
+	overflow: hidden;
+	max-width: 1880px;
+
+	@include media("<=xs") {
+		border-radius: 0;
+		padding: 0;
+	}
+
+	&__container.container {
+		position: relative;
+		z-index: 1;
+		padding-top: 120px;
+		padding-bottom: 128px;
+
+		@include media("<=xs") {
+			padding: 28px 0;
+		}
+	}
+
+	&__about {
+		max-width: 590px;
+	}
+
+	&__title {
+		font-weight: 800;
+		font-size: fluid(60px, 32px);
+		margin-bottom: fluid(40px, 20px);
+	}
+
+	&__text {
+		font-size: fluid(20px, 14px);
+
+		@include media("<=xs") {
+			color: var(--text-color-second);
+		}
+	}
+
+	&__image {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: calc(100% - 40px);
+		height: 100%;
+		transform: translateX(-50%);
+		border-radius: 10px;
+		overflow: hidden;
+
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(90deg, rgba(11, 12, 13, 0.6) 42.77%, rgba(11, 12, 13, 0) 51.54%);
+
+			@include media("<=xs") {
+				display: none;
+			}
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 220px;
+			bottom: 0;
+			left: 0;
+			background: linear-gradient(180deg, rgba(11, 12, 13, 0) 0%, #0B0C0D 100%);
+
+			@include media("<=xs") {
+				display: none;
+			}
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+
+			&:nth-child(2) {
+				display: none;
+			}
+
+			@include media("<=xs") {
+				object-position: 80% 50%;
+			}
+		}
+
+		@include media("<=xs") {
+			position: static;
+			padding: 0;
+			display: block;
+			height: 248px;
+			width: 100%;
+			left: 0;
+			transform: none;
+			border-radius: 0;
+		}
+	}
+
+}

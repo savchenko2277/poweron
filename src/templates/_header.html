@@ -1,0 +1,77 @@
+<header class="header" data-scroll-padding>
+    <div class="header__container container">
+        <a href="main.html" class="header__logo" aria-label="Логотип">
+            <img class="header__logo-img header__logo-img--dark" src="./img/dark/logo.svg" alt="">
+            <img class="header__logo-img header__logo-img--light" src="./img/light/logo.svg" alt="">
+        </a>
+        <div class="header__navigation header-modal" data-scroll-padding>
+            <div class="header-modal__container container">
+                <ul class="header__list header-modal__content" data-modal-content>
+                    <li class="header__list-item header__list-item_pc" data-modal-open=".production-modal">
+                        <a href="#">
+                            Продукция
+                            <svg>
+                                <use xlink:href="#arrow-down-small"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="header__list-item header__list-item_pc">
+                        <a href="#">
+                            Где купить
+                            <svg>
+                                <use xlink:href="#arrow-down-small"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="header__list-item">
+                        <a href="#">
+                            Партнерам
+                            <svg>
+                                <use xlink:href="#arrow-down-small"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="header__list-item">
+                        <a href="#">
+                            Поддержа
+                            <svg>
+                                <use xlink:href="#arrow-down-small"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="header__list-item">
+                        <a href="#">
+                            О бренде
+                            <svg>
+                                <use xlink:href="#arrow-down-small"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="header__side">
+            <div class="header__control">
+                <button type="button" class="header__control-button" data-theme-toggle="dark" aria-label="Тёмная тема">
+                    <svg>
+                        <use xlink:href="#moon"></use>
+                    </svg>
+                </button>
+                <button type="button" class="header__control-button" data-theme-toggle="light"
+                    aria-label="Светлая тема">
+                    <svg>
+                        <use xlink:href="#sun"></use>
+                    </svg>
+                </button>
+            </div>
+            <form class="header__search">
+                <input name="search" placeholder="Ключевое слово" type="text" autocomplete="off">
+                <button type="button" data-search-open=".search-modal">
+                    <svg>
+                        <use xlink:href="#search"></use>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+</header>

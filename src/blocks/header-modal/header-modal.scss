@@ -1,0 +1,74 @@
+@use 'lib' as *;
+
+.header-modal {
+	$self: &;
+
+	@include media("<=lg") {
+		position: fixed;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 5;
+		padding-top: 90px;
+		background: #0B0C0D95;
+
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transition: all var(--transition);
+
+		&.active {
+			opacity: 1;
+			visibility: visible;
+			pointer-events: all;
+
+			#{$self}__container {
+				transform: translateY(0);
+			}
+		}
+	}
+
+	&__content.header__list {
+		@include media("<=lg") {
+			padding: 20px 20px 100px 20px;
+			width: 100%;
+			background: var(--card-color);
+			flex-direction: column;
+			align-items: start;
+			gap: 10px;
+			border-radius: 10px 10px 0 0;
+
+			.header__list-item {
+				width: 100%;
+			}
+
+			.header__list-item a {
+				padding: 20px;
+				background: var(--input-color);
+				width: 100%;
+				border-radius: 10px;
+				font-size: 16px;
+				font-weight: 600;
+			}
+		}
+	}
+
+	&__container.container {
+
+		@include media(">lg") {
+			width: auto;
+			margin: 0;
+		}
+
+		@include media("<=lg") {
+			height: 100%;
+			width: 100%;
+			display: flex;
+			align-items: end;
+			justify-content: end;
+			transform: translateY(100%);
+			transition: all var(--transition);
+		}
+
+	}
+}

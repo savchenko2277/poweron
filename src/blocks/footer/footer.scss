@@ -1,0 +1,297 @@
+@use 'lib' as *;
+
+html[data-theme="light"] {
+	.footer__logo-img {
+		&--dark {
+			display: none;
+		}
+
+		&--light {
+			animation: fadeIn forwards;
+			display: block;
+		}
+	}
+}
+
+.footer {
+	$self: &;
+
+	background: var(--card-color);
+	padding: 50px 0;
+	transition: color, background var(--transition);
+
+	@include media("<=lg") {
+		padding-bottom: calc(50px + 90px);
+	}
+
+	@include media("<xs") {
+		padding: 28px 0;
+		padding-bottom: calc(28px + 90px);
+	}
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		gap: 50px;
+	}
+
+	&__columns {
+		display: grid;
+		grid-template-columns: repeat(4, auto);
+		justify-content: space-between;
+		gap: 28px;
+
+		@include media("<=md") {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 19px 28px;
+		}
+	}
+
+	&__logo {
+		flex: 0 0 auto;
+	}
+
+	&__logo-img {
+		height: 51px;
+		object-fit: contain;
+		display: block;
+
+		&--light {
+			display: none;
+		}
+
+		@include media("<=xs") {
+			height: 42px;
+		}
+	}
+
+	&__logo-img--dark {}
+
+	&__logo-img--light {}
+
+	&__column {
+		padding-top: 20px;
+		display: flex;
+		flex-direction: column;
+
+		@include media("<=md") {
+			grid-column: auto / span 2;
+		}
+	}
+
+	&__column-title {
+		font-weight: 700;
+		font-size: 24px;
+		margin-bottom: 28px;
+		transition: color, background var(--transition);
+
+		@include media("<=xs") {
+			font-size: 18px;
+			margin-bottom: 20px;
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+
+	&__list-item {
+
+		&:hover a {
+			color: var(--orange);
+		}
+
+		a {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			gap: 10px;
+			min-height: 28px;
+			transition: all var(--transition);
+			width: 100%;
+			color: var(--text-color-second);
+
+			@include media("<=xs") {
+				font-size: 14px;
+				min-height: 25px;
+
+				&::after {
+					font-size: 12px;
+				}
+			}
+		}
+
+		&_soon {
+			pointer-events: none;
+			cursor: none;
+
+			a::after {
+				content: 'Скоро';
+				display: block;
+				font-size: 14px;
+				font-weight: 500;
+				padding: 5px 12px;
+				border-radius: 5px;
+				background: var(--input-color);
+				color: var(--text-color-second);
+				transition: color, background var(--transition);
+			}
+		}
+	}
+
+	&__socials {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 10px;
+		height: fit-content;
+
+		@include media("<=md") {
+			grid-row: 1 / auto;
+			grid-column: 2 / auto;
+		}
+
+		@include media("<=xs") {
+			gap: 5px;
+		}
+	}
+
+	&__social {
+
+		@include flex-center;
+
+		width: 48px;
+		height: 48px;
+		background: var(--input-color);
+		border-radius: 10px;
+		transition: background var(--transition);
+
+		@include media("<=xs") {
+			width: 40px;
+			height: 40px;
+
+			svg {
+				width: 20px;
+				height: 20px;
+			}
+		}
+
+		svg {
+			width: 28px;
+			height: 28px;
+			object-fit: contain;
+			fill: var(--text-color-second);
+			transition: all var(--transition);
+		}
+
+		&_youtube {
+			@include media("<=xs") {
+				background: #F70000;
+
+				svg {
+					fill: #ffffff;
+				}
+			}
+
+			&:hover {
+				background: #F70000;
+
+				svg {
+					fill: #ffffff;
+				}
+			}
+		}
+
+		&_telegram {
+			@include media("<=xs") {
+				background: #27A2E3;
+
+				svg {
+					fill: #ffffff;
+				}
+			}
+
+			&:hover {
+				background: #27A2E3;
+
+				svg {
+					fill: #ffffff;
+				}
+			}
+		}
+
+		&_max {
+			@include media("<=xs") {
+				background: linear-gradient(73.55deg, #44CCFF 14.56%, #5533EE 63.57%, #9933DD 88.6%);
+
+				svg {
+					fill: transparent;
+
+					path:nth-child(1) {
+						fill: #ffffff;
+					}
+
+					path:nth-child(2) {
+						fill: #5533EE;
+					}
+				}
+			}
+
+			&:hover {
+				background: linear-gradient(73.55deg, #44CCFF 14.56%, #5533EE 63.57%, #9933DD 88.6%);
+
+				svg {
+					fill: transparent;
+
+					path:nth-child(1) {
+						fill: #ffffff;
+					}
+
+					path:nth-child(2) {
+						fill: #5533EE;
+					}
+				}
+			}
+		}
+
+		&_vk {
+			@include media("<=xs") {
+				background: #0073F7;
+
+				svg {
+					fill: #ffffff;
+				}
+			}
+
+			&:hover {
+				background: #0073F7;
+
+				svg {
+					fill: #ffffff;
+				}
+			}
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 32px;
+		font-size: 14px;
+		color: var(--text-color-second);
+
+		a {
+			text-decoration: underline;
+		}
+
+		@include media("<=xs") {
+			flex-direction: column;
+			gap: 16px;
+			align-items: start;
+		}
+	}
+
+}

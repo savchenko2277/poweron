@@ -1,0 +1,38 @@
+@use 'lib' as *;
+
+.pages {
+	$self: &;
+
+	padding: 50px 0;
+
+	&__container {
+
+	}
+
+	&__title {
+		margin-bottom: 32px;
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+
+	&__list-item {
+		font-size: 18px;
+		font-weight: 600;
+		color: var(--text-color);
+
+		&:has(b) {
+			pointer-events: none;
+			opacity: 0.6;
+		}
+
+		b {
+			opacity: 0.5;
+			font-weight: 600;
+		}
+	}
+
+}

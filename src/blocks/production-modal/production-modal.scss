@@ -1,0 +1,188 @@
+@use 'lib' as *;
+
+.production-modal {
+	$self: &;
+
+	position: fixed;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+	padding-top: 90px;
+	background: #0B0C0D95;
+
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transition: all var(--transition);
+
+	&.active {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: all;
+
+		#{$self}__container {
+			transform: translateY(0);
+		}
+	}
+
+	@include media("<=lg") {
+		padding-top: 0;
+		z-index: 15;
+	}
+
+	&__container.container {
+		transform: translateY(100%);
+		transition: all var(--transition);
+		overflow-y: auto;
+
+		@include media("<=lg") {
+			width: 100%;
+			height: 100%;
+			max-height: 100%;
+			display: flex;
+			justify-content: end;
+			align-items: end;
+		}
+	}
+
+	&__columns {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		background: var(--card-color);
+		border-radius: 10px;
+		width: 100%;
+
+		@include media("<=lg") {
+			grid-template-columns: 100%;
+		}
+
+		@include media("<=sm") {
+			
+		}
+	}
+
+	&__content {
+		padding: 36px;
+		border-right: 1px solid var(--devider-color);
+
+		@include media("<=lg") {
+			padding: 24px 20px 100px 20px;
+		}
+	}
+
+	&__about {
+		width: 100%;
+		max-width: 320px;
+	}
+
+	&__title {
+		margin-bottom: fluid(36px, 20px);
+		font-size: fluid(32px, 20px);
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	&__items {
+		display: grid;
+		gap: 20px;
+		grid-template-columns: repeat(3, 1fr);
+
+		@include media("<=sm") {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 10px;
+		}
+	}
+
+	&__item {
+
+		background: var(--input-color);
+		min-height: 200px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		border-radius: 10px;
+		position: relative;
+
+		&_soon {
+			pointer-events: none;
+			cursor: none;
+			
+			#{$self}__item-title {
+				color: var(--text-color-second);
+			}
+
+			#{$self}__image {
+				opacity: 0.3;
+			}
+
+			&::after {
+				content: 'Скоро';
+				position: absolute;
+				bottom: 20px;
+				left: 20px;
+				font-size: 14px;
+				font-weight: 500;
+				padding: 5px 16px;
+				background: var(--text-color);
+				color: var(--bg-color);
+				border-radius: 5px;
+
+				@include media("<=xs") {
+					font-size: 12px;
+					padding: 2px 8px;
+					bottom: 16px;
+					left: 16px;
+				}
+			}
+		}
+		
+		@include media("<=sm") {
+			min-height: 139px;
+		}
+	}
+
+	&__item-title {
+		padding: fluid(20px, 16px) fluid(20px, 16px) 0 fluid(20px, 16px);
+		font-size: fluid(20px, 14px);
+		font-weight: 700;
+		line-height: 1;
+	}
+
+	&__image {
+		width: 100%;
+		object-fit: contain;
+		height: 130px;
+
+		@include media("<=sm") {
+			height: 85px;
+		}
+	}
+
+	&__side {
+		padding: 36px;
+		display: flex;
+		flex-direction: column;
+
+		@include media("<=lg") {
+			display: none;
+		}
+	}
+
+	&__side-title {
+		margin-bottom: 20px;
+		font-size: 32px;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	&__side-text {
+		color: var(--text-color-second);
+		margin-bottom: 36px;
+	}
+
+	&__side-btn {
+		width: 100%;
+	}
+
+}
