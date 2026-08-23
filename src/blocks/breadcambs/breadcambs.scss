@@ -1,0 +1,31 @@
+@use 'lib' as *;
+
+.breadcambs {
+	$self: &;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 12px;
+
+	&__item {
+		font-size: fluid(16px, 12px);
+
+		&:not(:last-child) {
+			color: var(--text-color-second);
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			gap: 12px;
+
+			&::after {
+				content: '';
+				display: block;
+				height: fluid(16px, 10px);
+				width: 1px;
+				background: var(--devider-color);
+			}
+		}
+	}
+
+}

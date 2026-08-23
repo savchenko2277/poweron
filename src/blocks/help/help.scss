@@ -17,6 +17,12 @@
 		margin-bottom: 0;
 	}
 
+	&_margin {
+		@include media("<=lg") {
+			margin-bottom: fluid(150px, 100px);
+		}
+	}
+
 	&__gradient {
 		position: absolute;
 		inset: 1px;

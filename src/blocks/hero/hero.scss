@@ -10,7 +10,9 @@ html[data-theme="light"] {
 			display: block;
 		}
 	}
-	.hero__title, .hero__text {
+
+	.hero__title,
+	.hero__text {
 		color: var(--bg-color);
 
 		@include media("<=xs") {
@@ -35,6 +37,109 @@ html[data-theme="light"] {
 		padding: 0;
 	}
 
+	&_advantages {
+		#{$self}__container.container {
+			@include media(">xs") {
+				padding-top: 90px;
+				padding-bottom: 0;
+			}
+		}
+
+		#{$self}__text {
+			@include media(">xs") {
+				margin-bottom: 125px;
+			}
+		}
+
+		#{$self}__image {
+			@include media("<=xs") {
+				margin-bottom: 20px;
+			}
+		}
+
+		.hero__image {
+			@include media("<=xs") {
+				position: relative;
+
+				&::before {
+					display: block;
+					content: '';
+					position: absolute;
+					width: 100%;
+					height: 80px;
+					bottom: 0;
+					left: 0;
+					background: linear-gradient(180deg, rgba(11, 12, 13, 0) 0%, #0B0C0D 100%);
+				}
+			}
+		}
+	}
+
+	&__advantages {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 10px;
+		position: relative;
+		z-index: 2;
+		padding-bottom: 50px;
+
+		@include media("<=md") {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include media("<=xs") {
+			margin-bottom: 0;
+		}
+
+	}
+
+	&__advantages-item {
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: fluid(12px, 8px);
+		padding: fluid(20px, 14px);
+
+		background: rgba(255, 255, 255, 0.1);
+		backdrop-filter: blur(10px);
+		border-radius: 10px;
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset: -1px;
+			z-index: -1;
+			border-radius: 11px;
+			padding: 1px;
+
+			background: linear-gradient(225deg, #7A7A7D 0%, rgba(122, 122, 125, 0.3) 15%, transparent 35%);
+
+			mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+			mask-composite: exclude;
+			pointer-events: none;
+		}
+
+		@include media("<=xs") {
+			flex-direction: column;
+			align-items: start;
+		}
+	}
+
+	&__advantages-item-icon {
+		width: fluid(36px, 24px);
+		height: fluid(36px, 24px);
+		object-fit: contain;
+	}
+
+	&__advantages-item-text {
+		font-size: fluid(16px, 14px);
+	}
+
+	&__breadcambs {
+		margin-bottom: 16px;
+	}
+
 	&__container.container {
 		position: relative;
 		z-index: 1;
@@ -46,9 +151,7 @@ html[data-theme="light"] {
 		}
 	}
 
-	&__about {
-		max-width: 590px;
-	}
+	&__about {}
 
 	&__title {
 		font-weight: 800;

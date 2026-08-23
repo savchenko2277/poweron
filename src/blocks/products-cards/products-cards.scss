@@ -1,0 +1,42 @@
+@use 'lib' as *;
+
+.products-cards {
+	$self: &;
+
+	margin-bottom: fluid(150px, 100px);
+
+	&_alt {
+		#{$self}__items {
+			@include media("<=xs") {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+	}
+
+	&__container {
+
+	}
+
+	&__title {
+		margin-bottom: fluid(50px, 28px);
+
+		b {
+			color: var(--orange);
+		}
+	}
+
+	&__items {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: fluid(20px, 10px);
+
+		@include media("<=lg") {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include media("<=xs") {
+			grid-template-columns: 100%;
+		}
+	}
+
+}

@@ -39,6 +39,26 @@ html[data-theme="light"] {
 		opacity: 0;
 	}
 
+	&_alt {
+		background: var(--card-color);
+
+		&::before {
+			display: none;
+		}
+
+		#{$self}__image {
+			height: fluid(250px, 90px);
+		}
+
+		#{$self}__top {
+			padding: fluid(24px, 8px) fluid(24px, 12px) 0 fluid(24px, 12px);
+		}
+
+		#{$self}__bottom {
+			padding: fluid(24px, 12px);
+		}
+	}
+
 	&:hover {
 
 		&::before {
@@ -48,6 +68,12 @@ html[data-theme="light"] {
 		#{$self}__shadow {
 			opacity: 1;
 		}
+	}
+
+	&__desc {
+		padding: 0 fluid(24px, 12px);
+		margin-bottom: fluid(24px, 12px);
+		font-size: fluid(16px, 12px);
 	}
 
 	&__shadow {
