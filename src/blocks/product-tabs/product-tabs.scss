@@ -1,0 +1,53 @@
+@use 'lib' as *;
+
+.product-tabs {
+	$self: &;
+
+	margin-bottom: fluid(150px, 100px);
+
+	&__navigation {
+		margin-bottom: 50px;
+		border-bottom: 1px solid var(--devider-color);
+	}
+
+	&__navigation-list {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		transform: translateY(1px);
+	}
+
+	&__navigation-btn {
+		flex: 1 1 auto;
+		border-bottom: 1px solid var(--devider-color);
+		padding-bottom: 15px;
+		font-size: fluid(20px, 14px);
+		color: var(--text-color-second);
+		transition: all var(--transition);
+
+		&.active {
+			color: var(--text-color);
+			border-bottom: 1px solid var(--orange);
+		}
+
+		@include media("<=xs") {
+			width: fit-content;
+			flex: 0 0 auto;
+		}
+	}
+
+	&__tabs {
+
+	}
+
+	&__tab {
+		display: none;
+
+		&.active {
+			display: block;
+			animation: fadeIn 0.3s forwards;
+		}
+	}
+
+}

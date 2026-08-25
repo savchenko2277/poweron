@@ -1,0 +1,32 @@
+@use 'lib' as *;
+
+.next {
+	$self: &;
+
+	margin-bottom: fluid(150px, 100px);
+
+	&__container {
+
+	}
+
+	&__title {
+		font-size: fluid(36px, 24px);
+		font-weight: 700;
+		margin-bottom: fluid(30px, 28px);
+	}	
+
+	&__cards {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px;
+
+		@include media("<=lg") {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include media("<=xs") {
+			grid-template-columns: 100%;
+		}
+	}
+
+}

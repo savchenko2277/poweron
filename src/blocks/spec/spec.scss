@@ -1,0 +1,70 @@
+@use 'lib' as *;
+
+.spec {
+	$self: &;
+
+	padding: fluid(50px, 20px);
+	border-radius: 10px;
+	background: var(--card-color);
+
+	&__title {
+		margin-bottom: fluid(48px, 36px);
+	}
+
+	&__rows {
+		display: flex;
+		flex-direction: column;
+		gap: fluid(48px, 36px);
+	}
+
+	&__row {
+
+	}
+
+	&__row-title {
+		margin-bottom: 8px;
+		font-size: fluid(28px, 20px);
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	&__columns {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 0 fluid(70px, 24px);
+
+		@include media("<=xs") {
+			grid-template-columns: 100%;
+			gap: 0;
+		}
+	}
+
+	&__column {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		padding: fluid(20px, 12px) 0;
+		border-bottom: 1px solid var(--devider-color);
+		color: var(--text-color-second);
+		gap: 5px 16px;
+		font-size: fluid(16px, 14px);
+
+		b {
+			font-weight: 600;
+			text-align: end;
+			color: var(--text-color);
+			font-size: 16px;
+		}
+
+		@include media("<=xs") {
+			flex-direction: column;
+			align-items: start;
+
+			b {
+				text-align: start;
+			}
+		}
+	}
+
+}

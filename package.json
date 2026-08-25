@@ -70,6 +70,7 @@
 		"suffix": "$self: &;"
 	},
 	"dependencies": {
+		"@fancyapps/ui": "^6.1.14",
 		"swiper": "^12.0.2"
 	}
 }

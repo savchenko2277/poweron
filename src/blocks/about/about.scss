@@ -1,0 +1,107 @@
+@use 'lib' as *;
+
+.about {
+	$self: &;
+
+	background: var(--card-color);
+	border-radius: 10px;
+	overflow: hidden;
+
+	&__top {
+		display: grid;
+		grid-template-columns: 1fr 495px;
+		border-bottom: 1px solid var(--devider-color);
+
+		@include media("<=md") {
+			grid-template-columns: 100%;
+		}
+	}
+
+	&__info {
+		padding: fluid(50px, 20px);
+	}
+
+	&__title {
+		margin-bottom: fluid(24px, 16px);
+	}
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		max-width: 548px;
+
+		p {
+			color: var(--text-color-second);
+			font-size: fluid(20px, 14px);
+		}
+	}
+
+	&__image {
+		position: relative;
+		min-height: 270px;
+		background: var(--input-color);
+
+		img {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__items {
+		padding: fluid(50px, 20px);
+		display: grid;
+		grid-template-columns: repeat(4, auto);
+		gap: fluid(50px, 16px);
+
+		@include media("<=md") {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include media("<=xs") {
+			grid-template-columns: 100%;
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+
+		@include media("<=xs") {
+			display: grid;
+			grid-template-columns: auto 1fr;
+		}
+	}
+
+	&__item-icon {
+		width: fluid(48px, 32px);
+		height: fluid(48px, 32px);
+		object-fit: contain;
+		margin-bottom: 20px;
+
+		@include media("<=xs") {
+			grid-row: 1 / span 2;
+			margin-bottom: 0;
+			margin-right: 16px;
+		}
+	}
+
+	&__item-title {
+		font-weight: 700;
+		font-size: fluid(24px, 18px);
+		margin-bottom: 12px;
+
+		@include media("<=xs") {
+
+		}
+	}
+
+	&__item-text {
+		color: var(--text-color-second);
+		font-size: fluid(16px, 14px);
+	}
+
+}

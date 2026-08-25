@@ -102,21 +102,428 @@
 
     <main class="main">
 
-        <section class="pages">
-            <div class="pages__container container">
-                <h1 class="pages__title title">Список страниц</h1>
-                <ul class="pages__list">
-                    <li class="pages__list-item"><a href="main.html">Главная</a></li>
-                    <li class="pages__list-item"><a href="hasgen.html">Газовые генераторы</a></li>
-                    <li class="pages__list-item"><a href="where.html">Где купить <b>(в&#160;процессе)</b></a></li>
-                    <li class="pages__list-item"><a href="dilers.html">Для&#160;дилеров <b>(в&#160;процессе)</b></a></li>
-                    <li class="pages__list-item"><a href="support.html">Поддержка <b>(в&#160;процессе)</b></a></li>
-                    <li class="pages__list-item"><a href="about.html">О&#160;производителе <b>(в&#160;процессе)</b></a></li>
-                    <li class="pages__list-item"><a href="product.html">Карточка товара</a></li>
-                    <li class="pages__list-item"><a href="404.html">404</a></li>
-                    <li class="pages__list-item"><a href="policy.html">Политика конфидициальности</a></li>
-                    <li class="pages__list-item"><a href="contacts.html">Контакты</a></li>
+        <section class="product">
+            <div class="product__container container">
+                <ul class="product__breadcambs breadcambs">
+                    <li class="breadcambs__item"><a href="#">Главная</a></li>
+                    <li class="breadcambs__item"><a href="#">Газовые генераторы</a></li>
+                    <li class="breadcambs__item"><a href="#">Газовый генератор POWERON GC15000</a></li>
                 </ul>
+                <div class="product__columns">
+                    <div class="product__gallery">
+                        <div class="product__swiper swiper">
+                            <div class="product__gallery-navigation">
+                                <button type="button"
+                                    class="product__gallery-navigation-btn product__gallery-navigation-btn_prev"></button>
+                                <button type="button"
+                                    class="product__gallery-navigation-btn product__gallery-navigation-btn_next"></button>
+                            </div>
+                            <div class="product__gallery-pagination"></div>
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="./img/dark/product.webp" data-fancybox="product-gallery">
+                                        <img loading="lazy" src="./img/dark/product.webp" alt="">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="./img/dark/product-alt.webp" data-fancybox="product-gallery">
+                                        <img loading="lazy" src="./img/dark/product-alt.webp" alt="">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="./img/dark/product.webp" data-fancybox="product-gallery">
+                                        <img loading="lazy" src="./img/dark/product.webp" alt="">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="./img/dark/product-alt.webp" data-fancybox="product-gallery">
+                                        <img loading="lazy" src="./img/dark/product-alt.webp" alt="">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="./img/dark/product.webp" data-fancybox="product-gallery">
+                                        <img loading="lazy" src="./img/dark/product.webp" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product__top">
+                        <b class="product__garanty">
+                            Гарантия 5 лет
+                        </b>
+                        <h1 class="product__title">
+                            Газовый генератор
+                            <b>POWERON GC15000</b>
+                        </h1>
+                    </div>
+                    <div class="product__info">
+                        <p class="product__text">
+                            Надёжный резервный источник электроэнергии бизнеса и&#160;удалённых объектов. Автоматический
+                            запуск и&#160;стабильная работа на&#160;природном газе или&#160;пропане.
+                        </p>
+                        <ul class="product__list">
+                            <li class="product__list-item">
+                                Автоматический запуск при&#160;отключении сети
+                            </li>
+                            <li class="product__list-item">
+                                Работа на&#160;природном газе или&#160;LPG
+                            </li>
+                            <li class="product__list-item">
+                                Высокая мощность и&#160;стабильная работа
+                            </li>
+                            <li class="product__list-item">
+                                Прочный корпус и&#160;удобный доступ к&#160;узлам
+                            </li>
+                        </ul>
+                        <div class="product__bottom">
+                            <p class="product__price">550.000 ₽</p>
+                            <button type="button" class="product__link button button_orange">
+                                <span class="button__bg"></span>
+                                Где купить?
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-tabs">
+            <div class="product-tabs__navigation">
+                <div class="product-tabs__navigation-list container">
+                    <button type="button" class="product-tabs__navigation-btn active">
+                        Описание
+                    </button>
+                    <button type="button" class="product-tabs__navigation-btn">
+                        Характеристики
+                    </button>
+                    <button type="button" class="product-tabs__navigation-btn">
+                        Документы
+                    </button>
+                </div>
+            </div>
+            <div class="product-tabs__tabs container">
+                <div class="product-tabs__tab active">
+                    <div class="about">
+                        <div class="about__top">
+                            <div class="about__info">
+                                <h2 class="about__title title">
+                                    Описание
+                                </h2>
+                                <div class="about__text">
+                                    <p>
+                                        POWERON GC15000&#160;&#8212; мощный и&#160;надёжный газовый генератор для&#160;автоматического
+                                        резервного электроснабжения.
+                                    </p>
+                                    <p>
+                                        Продуманная конструкция обеспечивает тихую работу, простое обслуживание
+                                        и&#160;долговечность даже&#160;при&#160;интенсивной эксплуатации.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="about__image">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="about__items">
+                            <div class="about__item">
+                                <img src="./img/icons/mute.svg" alt="" class="about__item-icon">
+                                <h4 class="about__item-title">
+                                    Тихая работа
+                                </h4>
+                                <p class="about__item-text">
+                                    Шумоизолированный корпус <br>
+                                    и&#160;антивибрационные опоры
+                                </p>
+                            </div>
+                            <div class="about__item">
+                                <img src="./img/icons/garanty.svg" alt="" class="about__item-icon">
+                                <h4 class="about__item-title">
+                                    24/7 надёжность
+                                </h4>
+                                <p class="about__item-text">
+                                    Стабильное электроснабжение <br>
+                                    для&#160;критических задач
+                                </p>
+                            </div>
+                            <div class="about__item">
+                                <img src="./img/icons/power.svg" alt="" class="about__item-icon">
+                                <h4 class="about__item-title">
+                                    Работа на&#160;NG&#160;/ LPG
+                                </h4>
+                                <p class="about__item-text">
+                                    Гибкость в&#160;выборе топлива <br>
+                                    и&#160;экономичная эксплуатация
+                                </p>
+                            </div>
+                            <div class="about__item">
+                                <img src="./img/icons/mute.svg" alt="" class="about__item-icon">
+                                <h4 class="about__item-title">
+                                    Удобный доступ
+                                </h4>
+                                <p class="about__item-text">
+                                    Широкие сервисные панели <br>
+                                    для&#160;простого обслуживания
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-tabs__tab">
+                    <div class="spec">
+                        <h2 class="spec__title title">Характеристики</h2>
+                        <div class="spec__rows">
+                            <div class="spec__row">
+                                <h4 class="spec__row-title">Основные</h4>
+                                <div class="spec__columns">
+                                    <p class="spec__column">
+                                        Номинальная мощность (NG)
+                                        <b>15.0 кВт</b>
+                                    </p>
+                                    <p class="spec__column">
+                                        Номинальная мощность (NG)
+                                        <b>15.0 кВт</b>
+                                    </p>
+                                    <p class="spec__column">
+                                        Номинальная мощность (NG)
+                                        <b>15.0 кВт</b>
+                                    </p>
+                                    <p class="spec__column">
+                                        Номинальная мощность (NG)
+                                        <b>15.0 кВт</b>
+                                    </p>
+                                    <p class="spec__column">
+                                        Номинальная мощность (NG)
+                                        <b>15.0 кВт</b>
+                                    </p>
+                                    <p class="spec__column">
+                                        Номинальная мощность (NG)
+                                        <b>15.0 кВт</b>
+                                    </p>
+                                    <p class="spec__column">
+                                        Номинальная мощность (NG)
+                                        <b>15.0 кВт</b>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="spec__row">
+                                <h4 class="spec__row-title">Основные</h4>
+                                <div class="spec__columns">
+                                    <p class="spec__column">
+                                        Номинальная мощность (NG)
+                                        <b>15.0 кВт</b>
+                                    </p>
+                                    <p class="spec__column">
+                                        Номинальная мощность (NG)
+                                        <b>15.0 кВт</b>
+                                    </p>
+                                    <p class="spec__column">
+                                        Номинальная мощность (NG)
+                                        <b>15.0 кВт</b>
+                                    </p>
+                                    <p class="spec__column">
+                                        Номинальная мощность (NG)
+                                        <b>15.0 кВт</b>
+                                    </p>
+                                    <p class="spec__column">
+                                        Номинальная мощность (NG)
+                                        <b>15.0 кВт</b>
+                                    </p>
+                                    <p class="spec__column">
+                                        Номинальная мощность (NG)
+                                        <b>15.0 кВт</b>
+                                    </p>
+                                    <p class="spec__column">
+                                        Номинальная мощность (NG)
+                                        <b>15.0 кВт</b>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="spec__row">
+                                <h4 class="spec__row-title">Основные</h4>
+                                <div class="spec__columns">
+                                    <p class="spec__column">
+                                        Номинальная мощность (NG)
+                                        <b>15.0 кВт</b>
+                                    </p>
+                                    <p class="spec__column">
+                                        Номинальная мощность (NG)
+                                        <b>15.0 кВт</b>
+                                    </p>
+                                    <p class="spec__column">
+                                        Номинальная мощность (NG)
+                                        <b>15.0 кВт</b>
+                                    </p>
+                                    <p class="spec__column">
+                                        Номинальная мощность (NG)
+                                        <b>15.0 кВт</b>
+                                    </p>
+                                    <p class="spec__column">
+                                        Номинальная мощность (NG)
+                                        <b>15.0 кВт</b>
+                                    </p>
+                                    <p class="spec__column">
+                                        Номинальная мощность (NG)
+                                        <b>15.0 кВт</b>
+                                    </p>
+                                    <p class="spec__column">
+                                        Номинальная мощность (NG)
+                                        <b>15.0 кВт</b>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-tabs__tab">
+                    <div class="documents">
+                        <h2 class="documents__title title">
+                            Документы
+                        </h2>
+                        <div class="documents__items">
+                            <a href="#" class="documents__item">
+                                <img loading="lazy" src="./img/icons/file.svg" alt="" class="documents__item-icon">
+                                <div class="documents__item-content">
+                                    <h4>Паспорт GGC9000</h4>
+                                    <p>PDF, 1.8 МБ</p>
+                                </div>
+                                <img loading="lazy" src="./img/icons/download.svg" alt=""
+                                    class="documents__item-download">
+                                <span class="documents__item-bg"></span>
+                            </a>
+                            <a href="#" class="documents__item">
+                                <img loading="lazy" src="./img/icons/file.svg" alt="" class="documents__item-icon">
+                                <div class="documents__item-content">
+                                    <h4>Паспорт GGC9000</h4>
+                                    <p>PDF, 1.8 МБ</p>
+                                </div>
+                                <img loading="lazy" src="./img/icons/download.svg" alt=""
+                                    class="documents__item-download">
+                                <span class="documents__item-bg"></span>
+                            </a>
+                            <a href="#" class="documents__item">
+                                <img loading="lazy" src="./img/icons/file.svg" alt="" class="documents__item-icon">
+                                <div class="documents__item-content">
+                                    <h4>Паспорт GGC9000</h4>
+                                    <p>PDF, 1.8 МБ</p>
+                                </div>
+                                <img loading="lazy" src="./img/icons/download.svg" alt=""
+                                    class="documents__item-download">
+                                <span class="documents__item-bg"></span>
+                            </a>
+                            <a href="#" class="documents__item">
+                                <img loading="lazy" src="./img/icons/file.svg" alt="" class="documents__item-icon">
+                                <div class="documents__item-content">
+                                    <h4>Паспорт GGC9000</h4>
+                                    <p>PDF, 1.8 МБ</p>
+                                </div>
+                                <img loading="lazy" src="./img/icons/download.svg" alt=""
+                                    class="documents__item-download">
+                                <span class="documents__item-bg"></span>
+                            </a>
+                            <a href="#" class="documents__item">
+                                <img loading="lazy" src="./img/icons/file.svg" alt="" class="documents__item-icon">
+                                <div class="documents__item-content">
+                                    <h4>Паспорт GGC9000</h4>
+                                    <p>PDF, 1.8 МБ</p>
+                                </div>
+                                <img loading="lazy" src="./img/icons/download.svg" alt=""
+                                    class="documents__item-download">
+                                <span class="documents__item-bg"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="products-cards products-cards_alt">
+            <div class="products-cards__container container">
+                <h2 class="products-cards__title title">
+                    Аксессуары
+                </h2>
+                <div class="products-cards__items">
+                    <a href="#" class="product-card product-card_alt">
+                        <div class="product-card__top">
+                            <h4 class="product-card__title">
+                                POWERON
+                                <b>CONNECT 40</b>
+                            </h4>
+                        </div>
+                        <div class="product-card__image">
+                            <img loading="lazy" src="./img/dark/product-alt.webp" alt="">
+                            <img loading="lazy" src="./img/light/product.webp" alt="">
+                        </div>
+                        <p class="product-card__desc">
+                            Автоматика ввода резерва
+                        </p>
+                        <div class="product-card__bottom">
+                            <p class="product-card__price">80.000 ₽</p>
+                        </div>
+                    </a>
+                    <a href="#" class="product-card product-card_alt">
+                        <div class="product-card__top">
+                            <h4 class="product-card__title">
+                                POWERON
+                                <b>CONNECT 40</b>
+                            </h4>
+                        </div>
+                        <div class="product-card__image">
+                            <img loading="lazy" src="./img/dark/product-alt.webp" alt="">
+                            <img loading="lazy" src="./img/light/product.webp" alt="">
+                        </div>
+                        <p class="product-card__desc">
+                            Автоматика ввода резерва
+                        </p>
+                        <div class="product-card__bottom">
+                            <p class="product-card__price">80.000 ₽</p>
+                        </div>
+                    </a>
+                    <a href="#" class="product-card product-card_alt">
+                        <div class="product-card__top">
+                            <h4 class="product-card__title">
+                                POWERON
+                                <b>CONNECT 40</b>
+                            </h4>
+                        </div>
+                        <div class="product-card__image">
+                            <img loading="lazy" src="./img/dark/product-alt.webp" alt="">
+                            <img loading="lazy" src="./img/light/product.webp" alt="">
+                        </div>
+                        <p class="product-card__desc">
+                            Автоматика ввода резерва
+                        </p>
+                        <div class="product-card__bottom">
+                            <p class="product-card__price">80.000 ₽</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="help help_alt">
+            <span class="help__gradient"></span>
+            <div class="help__container container">
+                <div class="help__content">
+                    <div class="help__about">
+                        <h2 class="help__title title">
+                            Нужна помощь с&#160;подбором?
+                        </h2>
+                        <p class="help__desc">
+                            Подберём оптимальное решение под&#160;ваши задачи и&#160;условия эксплуатации.
+                        </p>
+                        <ul class="help__list">
+                            <li class="help__list-item">Быстрый подбор</li>
+                            <li class="help__list-item">Экспертная консультация</li>
+                            <li class="help__list-item">Оптимальное решение</li>
+                        </ul>
+                    </div>
+                    <button type="button" class="help__btn button button_orange">
+                        <span class="button__bg"></span>
+                        Получить консультацию
+                    </button>
+                </div>
+                <img loading="lazy" src="./img/icons/questions.svg" alt="" class="help__image">
             </div>
         </section>
 

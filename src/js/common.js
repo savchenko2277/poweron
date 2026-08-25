@@ -1,8 +1,12 @@
 import { throttle } from "./libs/utils";
 import { driveModal } from "./libs/driveModal";
+import { driveTabs } from "./libs/driveTabs";
 import "./polyfills.js";
 import "./blocks.js";
 import Swiper from "swiper";
+import { Fancybox } from "@fancyapps/ui";
+import { Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 
 // Функции
 
@@ -25,7 +29,7 @@ const setTheme = (theme) => {
 
 	try {
 		localStorage.setItem(THEME_KEY, next);
-	} catch (e) {}
+	} catch (e) { }
 
 	return next;
 };
@@ -55,7 +59,7 @@ const initHeader = () => {
 };
 
 const initSwipers = () => {
-	const popularSwiper = new Swiper(".popular__swiper", {
+	new Swiper(".popular__swiper", {
 		slidesPerView: 1.05,
 		spaceBetween: 10,
 
@@ -68,7 +72,43 @@ const initSwipers = () => {
 				slidesPerView: 3
 			}
 		}
-	})
+	});
+
+	new Swiper(".product__swiper", {
+		loop: true,
+		modules: [Pagination, Navigation],
+
+		navigation: {
+			prevEl: ".product__gallery-navigation-btn_prev",
+			nextEl: ".product__gallery-navigation-btn_next"
+		},
+
+		pagination: {
+			el: ".product__gallery-pagination",
+			clickable: true,
+			bulletClass: "swiper-bullet",
+			bulletActiveClass: "swiper-bullet-active"
+		}
+	});
+}
+
+const initFancybox = () => {
+	if (!document.querySelector("[data-fancybox]")) return;
+
+	Fancybox.bind("[data-fancybox]", {
+		groupAttr: "data-fancybox"
+	});
+}
+
+const initProductTabs = () => {
+	if (!document.querySelector(".product-tabs")) return;
+
+	driveTabs({
+		container: ".product-tabs",
+		controls: ".product-tabs__navigation-btn",
+		selects: [".product-tabs__tab"],
+		cls: "active"
+	});
 }
 
 // Запуск функций
@@ -77,4 +117,6 @@ window.addEventListener("load", () => {
 	initHeader();
 	driveModal();
 	initSwipers();
+	initFancybox();
+	initProductTabs();
 });

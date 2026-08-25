@@ -17,9 +17,52 @@
 		margin-bottom: 0;
 	}
 
+	&_alt {
+		#{$self}__desc {
+			color: var(--text-color-second);
+			margin-bottom: fluid(36px, 24px);
+			font-size: fluid(20px, 14px);
+		}
+		#{$self}__content {
+			align-items: end;
+
+			@include media("<=md") {
+				align-items: start;
+			}
+		} 
+	}
+
 	&_margin {
 		@include media("<=lg") {
 			margin-bottom: fluid(150px, 100px);
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 10px 28px;
+		
+		@include media("<=md") {
+			margin-bottom: 24px;
+		}
+	}
+
+	&__list-item {
+		font-size: fluid(20px, 14px);
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 10px;
+
+		&::before {
+			content: '';
+			display: block;
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			background: var(--orange);
 		}
 	}
 

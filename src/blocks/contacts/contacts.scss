@@ -1,0 +1,182 @@
+@use 'lib' as *;
+
+.contacts {
+	$self: &;
+
+	padding-top: fluid(70px, 30px);
+	margin-bottom: fluid(150px, 100px);
+
+	&__breadcambs {
+		margin-bottom: fluid(20px, 16px);
+	}
+
+	&__container {}
+
+	&__title {
+		text-transform: uppercase;
+		font-weight: 800;
+		font-size: fluid(60px, 32px);
+		margin-bottom: fluid(90px, 28px);
+	}
+
+	&__columns {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+
+		@include media("<=sm") {
+			grid-template-columns: 100%;
+		}
+	}
+
+	&__column {
+		background: var(--card-color);
+		padding: fluid(32px, 20px);
+		border-radius: 10px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__column-title {
+		font-weight: 700;
+		text-transform: uppercase;
+		font-size: fluid(28px, 20px);
+		margin-bottom: 32px;
+	}
+
+	&__column-content {
+		display: flex;
+		flex-direction: column;
+		gap: 28px;
+		flex: 1 1 auto;
+		height: 100%;
+	}
+
+	&__items {
+		display: flex;
+		flex-direction: column;
+		gap: fluid(28px, 20px);
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+
+		h4 {
+			color: var(--text-color-second);
+			font-size: fluid(16px, 14px);
+		}
+
+		p,
+		a {
+			font-weight: 700;
+			font-size: fluid(24px, 18px);
+			transition: all var(--transition);
+		}
+
+		a:hover {
+			color: var(--text-color-second);
+		}
+	}
+
+	&__socials {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 10px;
+		height: fit-content;
+		margin-top: auto;
+
+		@include media("<=md") {
+			grid-row: 1 / auto;
+			grid-column: 2 / auto;
+		}
+
+		@include media("<=xs") {
+			gap: 5px;
+		}
+	}
+
+	&__social {
+
+		@include flex-center;
+
+		width: 48px;
+		height: 48px;
+		background: var(--input-color);
+		border-radius: 10px;
+		transition: background var(--transition);
+
+		@include media("<=xs") {
+			width: 40px;
+			height: 40px;
+
+			svg {
+				width: 20px;
+				height: 20px;
+			}
+		}
+
+		svg {
+			width: 28px;
+			height: 28px;
+			object-fit: contain;
+			fill: var(--text-color-second);
+			transition: all var(--transition);
+		}
+
+		&_youtube {
+
+			&:hover {
+				background: #F70000;
+
+				svg {
+					fill: #ffffff;
+				}
+			}
+		}
+
+		&_telegram {
+
+			&:hover {
+				background: #27A2E3;
+
+				svg {
+					fill: #ffffff;
+				}
+			}
+		}
+
+		&_max {
+
+			&:hover {
+				background: linear-gradient(73.55deg, #44CCFF 14.56%, #5533EE 63.57%, #9933DD 88.6%);
+
+				svg {
+					fill: transparent;
+
+					path:nth-child(1) {
+						fill: #ffffff;
+					}
+
+					path:nth-child(2) {
+						fill: #5533EE;
+					}
+				}
+			}
+		}
+
+		&_vk {
+
+			&:hover {
+				background: #0073F7;
+
+				svg {
+					fill: #ffffff;
+				}
+			}
+		}
+	}
+
+}

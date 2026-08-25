@@ -1,0 +1,107 @@
+@use 'lib' as *;
+
+.error {
+	$self: &;
+
+	padding-top: fluid(70px, 30px);
+	margin-bottom: fluid(150px, 100px);
+
+	&__breadcambs.container {
+		margin-bottom: fluid(36px, 28px);
+	}
+
+	&__container.container {
+		padding: 50px;
+		background: var(--card-color);
+		display: flex;
+		flex-direction: row;
+		align-items: start;
+		gap: 0px;
+		overflow: hidden;
+
+		@include media("<=xs") {
+			flex-direction: column;
+			padding: 10px 20px;
+			width: 100%;
+			gap: 24px;
+		}
+	}
+
+	&__about {
+		max-width: 671px;
+	}
+
+	&__value {
+		font-size: fluid(150px, 100px);
+		font-weight: 800;
+		color: var(--orange);
+		margin-bottom: fluid(20px, 10px);
+		line-height: 1;
+	}
+
+	&__title {
+		font-size: fluid(52px, 28px);
+		font-weight: 700;
+		margin-bottom: fluid(20px, 12px);
+	}
+
+	&__text {
+		font-size: fluid(20px, 14px);
+		color: var(--text-color-second);
+		line-height: 1.4;
+
+		@include media("<=xs") {
+			span {
+				display: none;
+			}
+		}
+	}
+
+	&__side {
+		margin-right: -50px;
+		margin-top: -40px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		@include media("<=xs") {
+			margin-top: 0;
+			margin-right: 0;
+			width: 100%;
+			flex-direction: column-reverse;
+		}
+	}
+
+	&__image {
+		margin-bottom: 8px;
+		min-width: 320px;
+
+		@include media("<=xs") {
+			align-self: flex-end;
+			width: calc(100% + 20px);
+			max-width: none;
+			transform: translateX(20px);
+			margin-bottom: 0;
+		}
+	}
+
+	&__desc {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		font-size: fluid(24px, 18px);
+		font-weight: 700;
+
+		b {
+			font-weight: 700;
+			color: var(--orange);
+		}
+
+		@include media("<=xs") {
+			text-align: start;
+			align-self: flex-start;
+			margin-bottom: 10px;
+		}
+	}
+
+}

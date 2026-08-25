@@ -1,0 +1,116 @@
+@use 'lib' as *;
+
+.documents {
+	$self: &;
+
+	padding: fluid(50px, 20px);
+	border-radius: 10px;
+	overflow: hidden;
+	background: var(--card-color);
+
+	&__title {
+		margin-bottom: fluid(36px, 20px);
+	}
+
+	&__items {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: fluid(20px, 10px);
+
+		@include media("<=sm") {
+			grid-template-columns: 100%;
+		}
+	}
+
+	&__item {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		padding: fluid(28px, 20px);
+		gap: 16px;
+		text-decoration: none;
+		color: inherit;
+
+		&-icon {
+			position: relative;
+			z-index: 2;
+			width: 40px;
+			height: 40px;
+
+			@include media("<=xs") {
+				display: none;
+			}
+		}
+
+		&-content {
+			position: relative;
+			z-index: 2;
+
+			h4 {
+				font-size: fluid(24px, 16px);
+				font-weight: 700;
+				margin-bottom: 8px;
+			}
+
+			p {
+				color: var(--text-color-second);
+				font-size: fluid(16px, 12px);
+			}
+		}
+
+		&-download {
+			position: relative;
+			z-index: 2;
+			margin-left: auto;
+			width: fluid(28px, 20px);
+			height: fluid(28px, 20px);
+		}
+
+		/* Фоновый слой с фигурой, градиентной рамкой 2px и срезанным углом */
+		&-bg {
+			position: absolute;
+			inset: 0;
+			z-index: 1;
+			border-radius: 10px 0 0 10px;
+
+			/* Градиент рамки из SVG (угол 223deg) */
+			background: linear-gradient(223deg, #7A7A7D 0%, rgba(122, 122, 125, 0.4) 15%, var(--input-color) 32%);
+			transition: background var(--transition, 0.3s);
+
+			/* Маска со спиленным углом 29px (в SVG preserveAspectRatio='none') */
+			mask-image:
+				linear-gradient(#000, #000),
+				url("data:image/svg+xml;charset=utf-8,<svg width='29' height='108' viewBox='519 0 29 108' preserveAspectRatio='none' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M519.357 0C521.71 0 523.988 0.829622 525.789 2.34295L544.432 18.0028C546.694 19.9029 548 22.7058 548 25.6599V98C548 103.523 543.523 108 538 108H519V0H519.357Z' fill='black'/></svg>");
+
+			/* calc(100% - 27px) создает 2px-нахлест, защищающий от субпиксельных полос */
+			mask-size: calc(100% - 27px) 100%, 29px 100%;
+			mask-position: left center, right center;
+			mask-repeat: no-repeat;
+
+			/* Внутренняя заливка карточки #292A2B */
+			&::after {
+				content: '';
+				position: absolute;
+				inset: 2px;
+				/* 2px толщина рамки */
+				background: var(--input-color);
+				border-radius: inherit;
+				z-index: 1;
+
+				mask-image: inherit;
+				mask-size: inherit;
+				mask-position: inherit;
+				mask-repeat: inherit;
+			}
+		}
+
+		&:hover {
+			.documents__item-bg {
+				/* Оранжевый подсвет рамки при наведении */
+				background: linear-gradient(223deg, #FF5A00 0%, rgba(255, 90, 0, 0.5) 20%, var(--input-color) 35%);
+			}
+		}
+	}
+}

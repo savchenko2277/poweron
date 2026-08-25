@@ -1,0 +1,28 @@
+@use 'lib' as *;
+
+.next-card {
+	$self: &;
+
+	background: var(--card-color);
+	border-radius: 10px;
+	padding: fluid(28px, 20px);
+
+	display: flex;
+	flex-direction: column;
+
+	&__title {
+		font-size: fluid(24px, 18px);
+		font-weight: 700;
+		margin-bottom: fluid(12px, 10px);
+	}
+
+	&__text {
+		margin-bottom: fluid(28px, 20px);
+		color: var(--text-color-second);
+	}
+
+	&__btn {
+		margin-top: auto;
+	}
+
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+
+@@include("_head.html")
+
+<body>
+    @@include("_header.html")
+
+    <main class="main">
+
+        <section class="error">
+            <ul class="error__breadcambs breadcambs container">
+                <li class="breadcambs__item"><a href="#">Главная</a></li>
+                <li class="breadcambs__item"><a href="#">404</a></li>
+            </ul>
+            <div class="error__container container">
+                <div class="error__about">
+                    <p class="error__value">404</p>
+                    <h1 class="error__title">
+                        Страница не найдена
+                    </h1>
+                    <p class="error__text">
+                        Похоже, ссылка устарела или страница была перемещена.
+                        <span>
+                            Вы можете вернуться на главную, открыть
+                            каталог POWERON или воспользоваться поиском по сайту.
+                        </span>
+                    </p>
+                </div>
+                <div class="error__side">
+                    <img loading="lazy" src="./img/error-image.webp" alt="" class="error__image">
+                    <p class="error__desc">
+                        <b>Техника в порядке!</b>
+                        Просто такой страницы нет
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="next">
+            <div class="next__container container">
+                <h2 class="next__title">
+                    Куда перейти дальше
+                </h2>
+                <div class="next__cards">
+                    <div class="next-card">
+                        <h4 class="next-card__title">
+                            Газовые генераторы
+                        </h4>
+                        <p class="next-card__text">
+                            Линейка резервных генераторов POWERON.
+                        </p>
+                        <a href="#" class="next-card__btn button button_orange">
+                            <span class="button__bg"></span>
+                            Открыть
+                        </a>
+                    </div>
+                    <div class="next-card">
+                        <h4 class="next-card__title">
+                            Где купить
+                        </h4>
+                        <p class="next-card__text">
+                            Официальные дилеры и партнёры.
+                        </p>
+                        <a href="#" class="next-card__btn button button_orange">
+                            <span class="button__bg"></span>
+                            Найти дилера
+                        </a>
+                    </div>
+                    <div class="next-card">
+                        <h4 class="next-card__title">
+                            Поддержка
+                        </h4>
+                        <p class="next-card__text">
+                            Документы, гарантия и технические вопросы.
+                        </p>
+                        <a href="#" class="next-card__btn button button_orange">
+                            <span class="button__bg"></span>
+                            Перейти
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    @@include("_bottom.html")
+</body>
+
+@@include("_sprite.svg")
+<script src="js/common.js?v=0"></script>
+</body>
+
+</html>

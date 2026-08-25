@@ -1,0 +1,88 @@
+@use 'lib' as *;
+
+.policy {
+	$self: &;
+
+	padding-top: fluid(70px, 30px);
+	margin-bottom: fluid(150px, 100px);
+
+	&__breadcambs {
+		margin-bottom: fluid(20px, 16px);
+	}
+
+	&__container {
+
+	}
+
+	&__top {
+		margin-bottom: fluid(90px, 50px);
+	}
+
+	&__title {
+		text-transform: uppercase;
+		font-weight: 800;
+		font-size: fluid(60px, 23px);
+		margin-bottom: fluid(36px, 16px);
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: row;
+		align-items: end;
+		gap: 20px;
+
+		@include media("<=xs") {
+			flex-direction: column;
+			align-items: start;
+		}
+	}
+
+	&__text {
+		font-size: fluid(20px, 14px);
+		color: var(--text-color-second);
+	}
+
+	&__update {
+		@include flex-center;
+
+		background: var(--text-color);
+		color: var(--bg-color);
+		text-wrap: nowrap;
+		padding: 10px 16px;
+		border-radius: 10px;
+		font-weight: 600;
+		flex: 1 1 auto;
+
+		@include media("<=xs") {
+			width: 100%;
+		}
+	}
+
+	&__items {
+		background: var(--card-color);
+		border-radius: 10px;
+		padding: fluid(4px, 0px) 0;
+	}
+
+	&__item {
+		padding: fluid(28px, 20px);
+
+		&:not(:last-child) {
+			border-bottom: 1px solid var(--devider-color);
+		}
+	}
+
+	&__item-title {
+		font-weight: 700;
+		font-size: fluid(24px, 18px);
+		margin-bottom: 16px;
+	}
+
+	&__item-text {
+		color: var(--text-color-second);
+		line-height: 1.4;
+		max-width: 809px;
+		font-size: fluid(16px, 14px);
+	}
+
+}
