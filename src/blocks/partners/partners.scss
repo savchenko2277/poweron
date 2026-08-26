@@ -1,0 +1,98 @@
+@use 'lib' as *;
+
+.partners {
+	$self: &;
+
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	max-width: 1374px;
+	margin: 0 auto 150px;
+	background: var(--card-color);
+	border-radius: 10px;
+	overflow: hidden;
+
+	@include media("<=xs") {
+		margin-bottom: 0;
+		border-bottom: 1px solid var(--devider-color);
+	}
+
+	&__gradient {
+
+	}
+
+	&__container {
+		padding: 80px 0;
+		z-index: 2;
+
+		@include media("<=xs") {
+			padding-bottom: 0;
+		}
+	}
+
+	&__title {
+		margin-bottom: fluid(50px, 20px);
+	}
+
+	&__items {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		max-width: 800px;
+		gap: 20px 60px;
+		margin-bottom: 50px;
+
+		@include media("<=xs") {
+			margin-bottom: 28px;
+			grid-template-columns: 100%;
+			gap: 12px;
+		}
+	}
+
+	&__text {
+		@include media(">xs") {
+			display: none;
+		}
+		
+		font-size: 14px;
+		line-height: 1.4;
+		color: var(--text-color-second);
+		margin-bottom: 28px;
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 16px;
+		font-weight: 700;
+		font-size: fluid(24px, 18px);
+
+		img {
+			width: fluid(48px, 32px);
+			height: fluid(48px, 32px);
+		}
+	}
+
+	&__btn {
+		@include media("<=xs") {
+			width: 100%;
+		}
+	}
+
+	&__image {
+		position: absolute;
+		height: 833px;
+		top: -120px;
+		right: 0;
+		transform: translateX(50%);
+		z-index: -1;
+		object-fit: contain;
+
+		@include media("<=xs") {
+			position: static;
+			height: auto;
+			transform: none;
+		}
+	}
+
+}

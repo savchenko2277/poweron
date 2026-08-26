@@ -14,6 +14,12 @@
 		padding: 0;
 	}
 
+	&_about {
+		#{$self}__text {
+			margin-bottom: fluid(115px, 28px);
+		}
+	}
+
 	&__container.container {
 		position: relative;
 		z-index: 1;
@@ -79,7 +85,7 @@
 			background: linear-gradient(180deg, rgba(11, 12, 13, 0) 0%, #0B0C0D 100%);
 		}
 	
-		img {
+		img, video {
 			position: absolute;
 			inset: 0;
 			width: 100%;

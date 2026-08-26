@@ -1,0 +1,90 @@
+@use 'lib' as *;
+
+.directions {
+	$self: &;
+
+	margin-bottom: fluid(150px, 100px);
+
+	&__container {}
+
+	&__title {
+		margin-bottom: fluid(50px, 28px);
+	}
+
+	&__cards {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: fluid(20px, 10px);
+
+		@include media("<=md") {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	&__card {
+
+		background: var(--input-color);
+		min-height: 200px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		border-radius: 10px;
+		position: relative;
+
+		&_soon {
+			pointer-events: none;
+			cursor: none;
+
+			#{$self}__item-title {
+				color: var(--text-color-second);
+			}
+
+			#{$self}__image {
+				opacity: 0.3;
+			}
+
+			&::after {
+				content: 'Скоро';
+				position: absolute;
+				bottom: 20px;
+				left: 20px;
+				font-size: 14px;
+				font-weight: 500;
+				padding: 5px 16px;
+				background: var(--text-color);
+				color: var(--bg-color);
+				border-radius: 5px;
+
+				@include media("<=xs") {
+					font-size: 12px;
+					padding: 2px 8px;
+					bottom: 16px;
+					left: 16px;
+				}
+			}
+		}
+
+		@include media("<=sm") {
+			min-height: 139px;
+		}
+
+	}
+
+	&__card-title {
+		padding: fluid(20px, 16px) fluid(20px, 16px) 0 fluid(20px, 16px);
+		font-size: fluid(20px, 14px);
+		font-weight: 700;
+		line-height: 1;
+	}
+
+	&__card-image {
+		width: 100%;
+		object-fit: contain;
+		height: 130px;
+
+		@include media("<=sm") {
+			height: 85px;
+		}
+	}
+
+}

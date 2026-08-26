@@ -7,6 +7,10 @@
 	border-radius: 10px;
 	overflow: hidden;
 
+	&_margin {
+		margin-bottom: fluid(150px, 100px);
+	}
+
 	&__top {
 		display: grid;
 		grid-template-columns: 1fr 495px;
