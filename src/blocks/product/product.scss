@@ -43,10 +43,9 @@
 		.swiper-slide {
 			@include flex-center;
 
-			padding: 0 fluid(50px, 20px);
-
-			img {
-				max-width: 100%;
+			img, a {
+				width: 100%;
+				height: 100%;
 				object-fit: contain;
 			}
 		}

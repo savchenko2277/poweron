@@ -124,6 +124,14 @@ html[data-theme="light"] {
 				display: none;
 			}
 		}
+
+		&:hover {
+			color: var(--orange);
+
+			svg {
+				stroke: var(--orange);
+			}
+		}
 	}
 
 	&__side {

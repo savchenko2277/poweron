@@ -26,8 +26,8 @@
 		pointer-events: none;
 
 		background:
-			linear-gradient(231deg, #7A7A7D 0%, rgba(122, 122, 125, 0.4) 10%, transparent 28%),
-			linear-gradient(51deg, #7A7A7D 0%, rgba(122, 122, 125, 0.4) 12%, #161619 30%);
+			linear-gradient(231deg, var(--input-color) 0%, rgba(122, 122, 125, 0.4) 10%, transparent 28%),
+			linear-gradient(51deg, var(--input-color) 0%, rgba(122, 122, 125, 0.4) 12%, var(--card-color) 30%);
 
 		mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
 		mask-composite: exclude;

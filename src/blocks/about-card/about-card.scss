@@ -1,5 +1,15 @@
 @use 'lib' as *;
 
+html[data-theme="light"] {
+	.about-card__location-icon {
+        display: none;
+
+        &_light {
+            display: block;
+        }
+    }
+}
+
 .about-card {
     $self: &;
 
@@ -69,6 +79,12 @@
         @include media("<=sm") {
             grid-template-columns: 100%;
             gap: 8px;
+        }
+    }
+
+    &__location-icon {
+        &_light {
+            display: none;
         }
     }
 

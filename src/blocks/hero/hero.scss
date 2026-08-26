@@ -197,7 +197,7 @@ html[data-theme="light"] {
 			height: 220px;
 			bottom: 0;
 			left: 0;
-			background: linear-gradient(180deg, rgba(11, 12, 13, 0) 0%, #0B0C0D 100%);
+			background: linear-gradient(180deg, rgba(11, 12, 13, 0) 0%, var(--bg-color) 100%);
 
 			@include media("<=xs") {
 				display: none;
