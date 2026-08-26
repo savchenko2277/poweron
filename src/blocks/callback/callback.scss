@@ -1,0 +1,106 @@
+@use 'lib' as *;
+
+.callback {
+	$self: &;
+
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	max-width: 1374px;
+	margin: 0 auto 150px;
+	background: var(--card-color);
+	border-radius: 10px;
+	overflow: hidden;
+
+	@include media("<=xs") {
+		margin-bottom: 0;
+		border-bottom: 1px solid var(--devider-color);
+	}
+
+	&__gradient {
+		position: absolute;
+		inset: 1px;
+		z-index: 0;
+		border-radius: 12px;
+		padding: 2px;
+		pointer-events: none;
+
+		background:
+			linear-gradient(231deg, #7A7A7D 0%, rgba(122, 122, 125, 0.4) 10%, transparent 28%),
+			linear-gradient(51deg, #7A7A7D 0%, rgba(122, 122, 125, 0.4) 12%, #161619 30%);
+
+		mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+		mask-composite: exclude;
+
+		@include media("<=lg") {
+			display: none;
+		}
+	}
+
+	&__container {
+		padding: 80px 0;
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+
+		@include media("<=xs") {
+			padding-bottom: 0;
+		}
+	}
+
+	&__title {
+		margin-bottom: 36px;
+
+		b {
+			color: var(--orange);
+		}
+	}
+
+	&__form {
+		display: grid;
+		grid-template-columns: 1fr 246px;
+		gap: 10px;
+		position: relative;
+		align-items: end;
+		z-index: 1;
+
+		@include media("<=md") {
+			grid-template-columns: 100%;
+			gap: 20px;
+		}
+	}
+
+	&__labels {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 10px;
+
+		@include media("<=md") {
+			gap: 20px;
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include media("<=xs") {
+			grid-template-columns: 100%;
+		}
+	}
+
+	&__button {
+		
+	}
+
+	&__label {}
+
+	&__image {
+		position: absolute;
+		height: fluid(435px, 320px);
+		right: -32px;
+		top: -38px;
+		object-fit: contain;
+
+		@include media("<=xs") {
+			position: static;
+		}
+	}
+
+}

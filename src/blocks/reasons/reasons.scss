@@ -1,0 +1,71 @@
+@use 'lib' as *;
+
+.reasons {
+	$self: &;
+
+	margin-bottom: fluid(150px, 100px);
+
+	&__container {
+
+	}
+
+	&__title {
+		margin-bottom: fluid(50px, 28px);
+
+		b {
+			color: var(--orange);
+		}
+	}
+
+	&__cards {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: fluid(20px, 10px);
+
+		@include media("<=md") {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include media("<=xs") {
+			grid-template-columns: 100%;
+		}
+	}
+
+	&__card {
+		border-radius: 10px;
+		background: var(--card-color);
+
+		@include media("<=xs") {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			overflow: hidden;
+		}
+	}
+
+	&__card-title {
+		font-size: fluid(24px, 18px);
+		font-weight: 700;
+		padding: fluid(28px, 20px) fluid(28px, 20px) 0 fluid(28px, 20px);
+		margin-bottom: 14px;
+
+		@include media("<=xs") {
+			padding: 20px 0 20px 20px;
+			margin-bottom: 0;
+		}
+	}
+
+	&__card-image {
+		width: 100%;
+
+		img {
+			width: 100%;
+			object-fit: contain;
+		}
+
+		@include media("<=xs") {
+			margin-right: -32px;
+		}
+	}
+
+}

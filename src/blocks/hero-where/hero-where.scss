@@ -1,0 +1,88 @@
+@use 'lib' as *;
+
+.hero-where {
+	$self: &;
+
+	background: var(--card-color);
+	overflow: hidden;
+	padding-bottom: 40px;
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: 0; left: 0;
+		width: 100%;
+		height: 83px;
+		background: linear-gradient(180deg, rgba(11, 12, 13, 0) 0%, #0B0C0D 100%);
+	}
+
+	@include media("<=xs") {
+		background: none;
+	}
+
+	&__container {
+		display: grid;
+		grid-template-columns: fluid(487px, 320px) 1fr;
+		align-items: center;
+
+		@include media("<=xs") {
+			grid-template-columns: 100%;
+		}
+	}
+
+	&__about {
+		display: flex;
+		flex-direction: column;
+		padding-top: fluid(90px, 30px);
+	}
+
+	&__title {
+		font-size: fluid(60px, 32px);
+		font-weight: 800;
+		text-transform: uppercase;
+		margin-bottom: 16px;
+		line-height: 1.1;
+	}
+
+	&__breadcambs {
+		margin-bottom: 36px;
+
+		@include media("<=xs") {
+			order: -1;
+		}
+	}
+
+	&__desc {
+		font-size: fluid(20px, 14px);
+		margin-bottom: 73px;
+
+		@include media("<=xs") {
+			color: var(--text-color-second);
+			margin-bottom: 0;
+		}
+	}
+
+	&__link.button {
+		width: fit-content;
+
+		@include media("<=xs") {
+			display: none;
+		}
+	}
+
+	&__image {
+		position: relative;
+		height: fluid(513px, 278px);
+
+		img {
+			position: absolute;
+			height: 100%;
+			left: 0;
+			top: 0;
+			object-fit: contain;
+			max-width: none;
+		}
+	}
+
+}

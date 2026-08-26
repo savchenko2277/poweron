@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+
+@@include("_head.html")
+
+<body>
+    @@include("_header.html")
+
+    <main class="main">
+
+        <section class="hero-where">
+            <div class="hero-where__container container">
+                <div class="hero-where__about">
+                    <h1 class="hero-where__title">Где купить POWERON</h1>
+                    <ul class="hero-where__breadcambs breadcambs">
+                        <li class="breadcambs__item"><a href="#">Главная</a></li>
+                        <li class="breadcambs__item"><a href="#">Где купить</a></li>
+                    </ul>
+                    <p class="hero-where__desc">
+                        Выберите регион и найдите ближайшего официального дилера POWERON.
+                    </p>
+                    <button type="button" class="hero-where__link button button_orange">
+                        <span class="button__bg"></span>
+                        Найти дилера
+                    </button>
+                </div>
+                <div class="hero-where__image">
+                    <img loading="lazy" src="./img/dark/map.svg" alt="">
+                </div>
+            </div>
+        </section>
+
+        <section class="locations">
+            <div class="locations__container container">
+                <div class="locations__select">
+                    <div class="locations__select-head">
+                        <p>Выберите регион</p>
+                        <span class="locations__select-head-bg"></span>
+                    </div>
+                    <div class="locations__select-items">
+                        <button class="locations__select-item is-select"
+                            data-location-select="Выберите регион">Все</button>
+                        <button class="locations__select-item is-active is-select"
+                            data-location-select="Москва">Москва</button>
+                        <button class="locations__select-item is-active is-select"
+                            data-location-select="Санкт-Петербург">Санкт-Петербург</button>
+                        <button class="locations__select-item is-active is-select"
+                            data-location-select="Казань">Казань</button>
+                    </div>
+                </div>
+                <div class="locations__tabs">
+                    <div class="locations__tab active" data-location-name="Все">
+                        <div class="locations__item location-card" data-location-id="moscow">
+                            <span class="location-card__bg"></span>
+                            <div class="location-card__top">
+                                <p class="location-card__location location-card__location_main">
+                                    <img src="./img/icons/dark/location.svg" alt="">
+                                    Москва
+                                </p>
+                                <p class="location-card__status is-main">Официальный дилер</p>
+                            </div>
+                            <h4 class="location-card__title">POWERON Центр</h4>
+                            <ul class="location-card__list">
+                                <li class="location-card__list-item"><a href="tel:+70001234567">+7 (000) 123-45-67</a>
+                                </li>
+                                <li class="location-card__list-item"><a
+                                        href="mailto:info@poweron-center.ru">info@poweron-center.ru</a></li>
+                            </ul>
+                        </div>
+                        <div class="locations__item location-card" data-location-id="spb">
+                            <span class="location-card__bg"></span>
+                            <div class="location-card__top">
+                                <p class="location-card__location">
+                                    <img src="./img/icons/dark/location.svg" alt="">
+                                    Санкт-Петербург
+                                </p>
+                                <p class="location-card__status">Сервисный партнёр</p>
+                            </div>
+                            <h4 class="location-card__title">ЭнергоПартнёр</h4>
+                            <ul class="location-card__list">
+                                <li class="location-card__list-item"><a href="tel:+70001234567">+7 (000) 123-45-67</a>
+                                </li>
+                                <li class="location-card__list-item"><a
+                                        href="mailto:info@poweron-center.ru">info@poweron-center.ru</a></li>
+                            </ul>
+                        </div>
+                        <div class="locations__item location-card" data-location-id="kazan">
+                            <span class="location-card__bg"></span>
+                            <div class="location-card__top">
+                                <p class="location-card__location">
+                                    <img src="./img/icons/dark/location.svg" alt="">
+                                    Казань
+                                </p>
+                                <p class="location-card__status">Сервисный партнёр</p>
+                            </div>
+                            <h4 class="location-card__title">ГазТехСервис</h4>
+                            <ul class="location-card__list">
+                                <li class="location-card__list-item"><a href="tel:+70001234567">+7 (000) 123-45-67</a>
+                                </li>
+                                <li class="location-card__list-item"><a
+                                        href="mailto:info@poweron-center.ru">info@poweron-center.ru</a></li>
+                            </ul>
+                        </div>
+                        <div class="locations__item location-card" data-location-id="moscow">
+                            <span class="location-card__bg"></span>
+                            <div class="location-card__top">
+                                <p class="location-card__location">
+                                    <img src="./img/icons/dark/location.svg" alt="">
+                                    Москва
+                                </p>
+                                <p class="location-card__status is-main">Официальный дилер</p>
+                            </div>
+                            <h4 class="location-card__title">POWERON Центр</h4>
+                            <ul class="location-card__list">
+                                <li class="location-card__list-item"><a href="tel:+70001234567">+7 (000) 123-45-67</a>
+                                </li>
+                                <li class="location-card__list-item"><a
+                                        href="mailto:info@poweron-center.ru">info@poweron-center.ru</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="locations__tab" data-location-name="Москва">
+                        <div class="locations__item location-card" data-location-id="moscow">
+                            <span class="location-card__bg"></span>
+                            <div class="location-card__top">
+                                <p class="location-card__location">
+                                    <img src="./img/icons/dark/location.svg" alt="">
+                                    Москва
+                                </p>
+                                <p class="location-card__status is-main">Официальный дилер</p>
+                            </div>
+                            <h4 class="location-card__title">POWERON Центр</h4>
+                            <ul class="location-card__list">
+                                <li class="location-card__list-item"><a href="tel:+70001234567">+7 (000) 123-45-67</a>
+                                </li>
+                                <li class="location-card__list-item"><a
+                                        href="mailto:info@poweron-center.ru">info@poweron-center.ru</a></li>
+                            </ul>
+                        </div>
+                        <div class="locations__item location-card" data-location-id="moscow">
+                            <span class="location-card__bg"></span>
+                            <div class="location-card__top">
+                                <p class="location-card__location">
+                                    <img src="./img/icons/dark/location.svg" alt="">
+                                    Москва
+                                </p>
+                                <p class="location-card__status is-main">Официальный дилер</p>
+                            </div>
+                            <h4 class="location-card__title">POWERON Центр</h4>
+                            <ul class="location-card__list">
+                                <li class="location-card__list-item"><a href="tel:+70001234567">+7 (000) 123-45-67</a>
+                                </li>
+                                <li class="location-card__list-item"><a
+                                        href="mailto:info@poweron-center.ru">info@poweron-center.ru</a></li>
+                            </ul>
+                        </div>
+                        <div class="locations__item location-card" data-location-id="moscow">
+                            <span class="location-card__bg"></span>
+                            <div class="location-card__top">
+                                <p class="location-card__location">
+                                    <img src="./img/icons/dark/location.svg" alt="">
+                                    Москва
+                                </p>
+                                <p class="location-card__status is-main">Официальный дилер</p>
+                            </div>
+                            <h4 class="location-card__title">POWERON Центр</h4>
+                            <ul class="location-card__list">
+                                <li class="location-card__list-item"><a href="tel:+70001234567">+7 (000) 123-45-67</a>
+                                </li>
+                                <li class="location-card__list-item"><a
+                                        href="mailto:info@poweron-center.ru">info@poweron-center.ru</a></li>
+                            </ul>
+                        </div>
+                        <div class="locations__item location-card" data-location-id="moscow">
+                            <span class="location-card__bg"></span>
+                            <div class="location-card__top">
+                                <p class="location-card__location">
+                                    <img src="./img/icons/dark/location.svg" alt="">
+                                    Москва
+                                </p>
+                                <p class="location-card__status is-main">Официальный дилер</p>
+                            </div>
+                            <h4 class="location-card__title">POWERON Центр</h4>
+                            <ul class="location-card__list">
+                                <li class="location-card__list-item"><a href="tel:+70001234567">+7 (000) 123-45-67</a>
+                                </li>
+                                <li class="location-card__list-item"><a
+                                        href="mailto:info@poweron-center.ru">info@poweron-center.ru</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="locations__tab" data-location-name="Санкт-Петербург">
+                        <div class="locations__item location-card" data-location-id="spb">
+                            <span class="location-card__bg"></span>
+                            <div class="location-card__top">
+                                <p class="location-card__location">
+                                    <img src="./img/icons/dark/location.svg" alt="">
+                                    Санкт-Петербург
+                                </p>
+                                <p class="location-card__status is-main">Официальный дилер</p>
+                            </div>
+                            <h4 class="location-card__title">POWERON Центр</h4>
+                            <ul class="location-card__list">
+                                <li class="location-card__list-item"><a href="tel:+70001234567">+7 (000) 123-45-67</a>
+                                </li>
+                                <li class="location-card__list-item"><a
+                                        href="mailto:info@poweron-center.ru">info@poweron-center.ru</a></li>
+                            </ul>
+                        </div>
+                        <div class="locations__item location-card" data-location-id="spb">
+                            <span class="location-card__bg"></span>
+                            <div class="location-card__top">
+                                <p class="location-card__location">
+                                    <img src="./img/icons/dark/location.svg" alt="">
+                                    Санкт-Петербург
+                                </p>
+                                <p class="location-card__status is-main">Официальный дилер</p>
+                            </div>
+                            <h4 class="location-card__title">POWERON Центр</h4>
+                            <ul class="location-card__list">
+                                <li class="location-card__list-item"><a href="tel:+70001234567">+7 (000) 123-45-67</a>
+                                </li>
+                                <li class="location-card__list-item"><a
+                                        href="mailto:info@poweron-center.ru">info@poweron-center.ru</a></li>
+                            </ul>
+                        </div>
+                        <div class="locations__item location-card" data-location-id="spb">
+                            <span class="location-card__bg"></span>
+                            <div class="location-card__top">
+                                <p class="location-card__location">
+                                    <img src="./img/icons/dark/location.svg" alt="">
+                                    Санкт-Петербург
+                                </p>
+                                <p class="location-card__status is-main">Официальный дилер</p>
+                            </div>
+                            <h4 class="location-card__title">POWERON Центр</h4>
+                            <ul class="location-card__list">
+                                <li class="location-card__list-item"><a href="tel:+70001234567">+7 (000) 123-45-67</a>
+                                </li>
+                                <li class="location-card__list-item"><a
+                                        href="mailto:info@poweron-center.ru">info@poweron-center.ru</a></li>
+                            </ul>
+                        </div>
+                        <div class="locations__item location-card" data-location-id="spb">
+                            <span class="location-card__bg"></span>
+                            <div class="location-card__top">
+                                <p class="location-card__location">
+                                    <img src="./img/icons/dark/location.svg" alt="">
+                                    Санкт-Петербург
+                                </p>
+                                <p class="location-card__status is-main">Официальный дилер</p>
+                            </div>
+                            <h4 class="location-card__title">POWERON Центр</h4>
+                            <ul class="location-card__list">
+                                <li class="location-card__list-item"><a href="tel:+70001234567">+7 (000) 123-45-67</a>
+                                </li>
+                                <li class="location-card__list-item"><a
+                                        href="mailto:info@poweron-center.ru">info@poweron-center.ru</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="locations__tab" data-location-name="Казань">
+                        <div class="locations__item location-card" data-location-id="kazan">
+                            <span class="location-card__bg"></span>
+                            <div class="location-card__top">
+                                <p class="location-card__location">
+                                    <img src="./img/icons/dark/location.svg" alt="">
+                                    Казань
+                                </p>
+                                <p class="location-card__status is-main">Официальный дилер</p>
+                            </div>
+                            <h4 class="location-card__title">POWERON Центр</h4>
+                            <ul class="location-card__list">
+                                <li class="location-card__list-item"><a href="tel:+70001234567">+7 (000) 123-45-67</a>
+                                </li>
+                                <li class="location-card__list-item"><a
+                                        href="mailto:info@poweron-center.ru">info@poweron-center.ru</a></li>
+                            </ul>
+                        </div>
+                        <div class="locations__item location-card" data-location-id="kazan">
+                            <span class="location-card__bg"></span>
+                            <div class="location-card__top">
+                                <p class="location-card__location">
+                                    <img src="./img/icons/dark/location.svg" alt="">
+                                    Казань
+                                </p>
+                                <p class="location-card__status is-main">Официальный дилер</p>
+                            </div>
+                            <h4 class="location-card__title">POWERON Центр</h4>
+                            <ul class="location-card__list">
+                                <li class="location-card__list-item"><a href="tel:+70001234567">+7 (000) 123-45-67</a>
+                                </li>
+                                <li class="location-card__list-item"><a
+                                        href="mailto:info@poweron-center.ru">info@poweron-center.ru</a></li>
+                            </ul>
+                        </div>
+                        <div class="locations__item location-card" data-location-id="kazan">
+                            <span class="location-card__bg"></span>
+                            <div class="location-card__top">
+                                <p class="location-card__location">
+                                    <img src="./img/icons/dark/location.svg" alt="">
+                                    Казань
+                                </p>
+                                <p class="location-card__status is-main">Официальный дилер</p>
+                            </div>
+                            <h4 class="location-card__title">POWERON Центр</h4>
+                            <ul class="location-card__list">
+                                <li class="location-card__list-item"><a href="tel:+70001234567">+7 (000) 123-45-67</a>
+                                </li>
+                                <li class="location-card__list-item"><a
+                                        href="mailto:info@poweron-center.ru">info@poweron-center.ru</a></li>
+                            </ul>
+                        </div>
+                        <div class="locations__item location-card" data-location-id="kazan">
+                            <span class="location-card__bg"></span>
+                            <div class="location-card__top">
+                                <p class="location-card__location">
+                                    <img src="./img/icons/dark/location.svg" alt="">
+                                    Казань
+                                </p>
+                                <p class="location-card__status is-main">Официальный дилер</p>
+                            </div>
+                            <h4 class="location-card__title">POWERON Центр</h4>
+                            <ul class="location-card__list">
+                                <li class="location-card__list-item"><a href="tel:+70001234567">+7 (000) 123-45-67</a>
+                                </li>
+                                <li class="location-card__list-item"><a
+                                        href="mailto:info@poweron-center.ru">info@poweron-center.ru</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="locations__side">
+                    <div class="locations__map">
+                        <img loading="lazy" src="./img/map-image.webp" alt="">
+                    </div>
+                    <div class="locations__about">
+                        <div class="about-card locations__about-item active" data-location-name="Москва"
+                            data-location-id="moscow">
+                            <span class="about-card__bg"></span>
+                            <div class="about-card__columns">
+                                <div class="about-card__content">
+                                    <div class="about-card__top">
+                                        <p class="about-card__location">
+                                            <img loading="lazy" src="./img/icons/dark/location-light.svg" alt="">
+                                            Москва
+                                        </p>
+                                        <p class="about-card__status">Сервисный партнёр</p>
+                                    </div>
+                                    <h4 class="about-card__title">ГазТехСервис</h4>
+                                    <ul class="about-card__list">
+                                        <li class="about-card__list-item">
+                                            <img src="./img/icons/location.svg" alt="">
+                                            <p>Москва, ул. Электрозаводская, 23</p>
+                                        </li>
+                                        <li class="about-card__list-item">
+                                            <img src="./img/icons/phone.svg" alt="">
+                                            <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+                                        </li>
+                                        <li class="about-card__list-item">
+                                            <img src="./img/icons/mail.svg" alt="">
+                                            <a href="tel:+74951234567">info@poweron-center.ru</a>
+                                        </li>
+                                        <li class="about-card__list-item">
+                                            <img src="./img/icons/browser.svg" alt="">
+                                            <a href="tel:+74951234567">poweron-center.ru</a>
+                                        </li>
+                                        <li class="about-card__list-item">
+                                            <img src="./img/icons/clock.svg" alt="">
+                                            <p>Пн–Пт: 9:00–18:00</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="about-card__image">
+                                    <img loading="lazy" src="./img/center.webp" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-card locations__about-item" data-location-name="Санкт-Петербург"
+                            data-location-id="spb">
+                            <span class="about-card__bg"></span>
+                            <div class="about-card__columns">
+                                <div class="about-card__content">
+                                    <div class="about-card__top">
+                                        <p class="about-card__location">
+                                            <img loading="lazy" src="./img/icons/dark/location-light.svg" alt="">
+                                            Казань
+                                        </p>
+                                        <p class="about-card__status">Сервисный партнёр</p>
+                                    </div>
+                                    <h4 class="about-card__title">ГазТехСервис</h4>
+                                    <ul class="about-card__list">
+                                        <li class="about-card__list-item">
+                                            <img src="./img/icons/location.svg" alt="">
+                                            <p>Москва, ул. Электрозаводская, 23</p>
+                                        </li>
+                                        <li class="about-card__list-item">
+                                            <img src="./img/icons/phone.svg" alt="">
+                                            <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+                                        </li>
+                                        <li class="about-card__list-item">
+                                            <img src="./img/icons/mail.svg" alt="">
+                                            <a href="tel:+74951234567">info@poweron-center.ru</a>
+                                        </li>
+                                        <li class="about-card__list-item">
+                                            <img src="./img/icons/browser.svg" alt="">
+                                            <a href="tel:+74951234567">poweron-center.ru</a>
+                                        </li>
+                                        <li class="about-card__list-item">
+                                            <img src="./img/icons/clock.svg" alt="">
+                                            <p>Пн–Пт: 9:00–18:00</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="about-card__image">
+                                    <img loading="lazy" src="./img/center.webp" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-card locations__about-item" data-location-name="Казань"
+                            data-location-id="kazan">
+                            <span class="about-card__bg"></span>
+                            <div class="about-card__columns">
+                                <div class="about-card__content">
+                                    <div class="about-card__top">
+                                        <p class="about-card__location">
+                                            <img loading="lazy" src="./img/icons/dark/location-light.svg" alt="">
+                                            Казань
+                                        </p>
+                                        <p class="about-card__status">Сервисный партнёр</p>
+                                    </div>
+                                    <h4 class="about-card__title">ГазТехСервис</h4>
+                                    <ul class="about-card__list">
+                                        <li class="about-card__list-item">
+                                            <img src="./img/icons/location.svg" alt="">
+                                            <p>Москва, ул. Электрозаводская, 23</p>
+                                        </li>
+                                        <li class="about-card__list-item">
+                                            <img src="./img/icons/phone.svg" alt="">
+                                            <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+                                        </li>
+                                        <li class="about-card__list-item">
+                                            <img src="./img/icons/mail.svg" alt="">
+                                            <a href="tel:+74951234567">info@poweron-center.ru</a>
+                                        </li>
+                                        <li class="about-card__list-item">
+                                            <img src="./img/icons/browser.svg" alt="">
+                                            <a href="tel:+74951234567">poweron-center.ru</a>
+                                        </li>
+                                        <li class="about-card__list-item">
+                                            <img src="./img/icons/clock.svg" alt="">
+                                            <p>Пн–Пт: 9:00–18:00</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="about-card__image">
+                                    <img loading="lazy" src="./img/center.webp" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="locations__more button button_grey">
+                    <span class="button__bg"></span>
+                    Показать еще (<span class="locations__more-count">7</span>)
+                </button>
+            </div>
+        </section>
+
+        <section class="reasons">
+            <div class="reasons__container container">
+                <h2 class="reasons__title title">
+                    Почему выгодно покупать у  <br><b>официальных партнёров?</b>
+                </h2>
+                <div class="reasons__cards">
+                    <div class="reasons__card">
+                        <h4 class="reasons__card-title">Оригинальное оборудование</h4>
+                        <div class="reasons__card-image">
+                            <img loading="lazy" src="./img/reasons/1.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="reasons__card">
+                        <h4 class="reasons__card-title">Запчасти <br> в наличии</h4>
+                        <div class="reasons__card-image">
+                            <img loading="lazy" src="./img/reasons/2.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="reasons__card">
+                        <h4 class="reasons__card-title">Консультации экспертов</h4>
+                        <div class="reasons__card-image">
+                            <img loading="lazy" src="./img/reasons/3.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="reasons__card">
+                        <h4 class="reasons__card-title">Гарантия и сервис</h4>
+                        <div class="reasons__card-image">
+                            <img loading="lazy" src="./img/reasons/4.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="callback">
+            <span class="callback__gradient"></span>
+            <div class="callback__container container">
+                <h2 class="callback__title title">
+                    <b>Не нашли </b>подходящего дилера?
+                </h2>
+                <form class="callback__form">
+                    <div class="callback__labels">
+                        <label class="callback__label custom-label">
+                            <h4 class="custom-label__title">Ваш регион</h4>
+                            <input placeholder="Москва" type="text" class="custom-label__input custom-input">
+                        </label>
+                        <label class="callback__label custom-label">
+                            <h4 class="custom-label__title">Номер телефона</h4>
+                            <input placeholder="+7 - ___ - (___) - __ - __" type="text" class="custom-label__input custom-input">
+                        </label>
+                        <label class="callback__label custom-label">
+                            <h4 class="custom-label__title">Ваше имя</h4>
+                            <input placeholder="Дмитрий Аксенов" type="text" class="custom-label__input custom-input">
+                        </label>
+                    </div>
+                    <button type="button" class="callback__btn button button_orange">
+                        <span class="button__bg"></span>
+                        Отправить заявку
+                    </button>
+                </form>
+                <img loading="lazy" src="./img/callback.webp" alt="" class="callback__image">
+            </div>
+        </section>
+
+    </main>
+
+    @@include("_bottom.html")
+</body>
+
+@@include("_sprite.svg")
+<script src="js/common.js?v=0"></script>
+</body>
+
+</html>

@@ -65,7 +65,7 @@
 		"from": "src/**/[^-]*.html",
 		"to": "src/blocks",
 		"js": "src/js/blocks.js",
-		"omit": "@@,js-,active,opened,moved,svg,sprite,icon-box,swiper,mb,button-",
+		"omit": "@@,js-,active,opened,moved,svg,sprite,icon-box,swiper,mb,button-,is-",
 		"prefix": "@use 'lib' as *;",
 		"suffix": "$self: &;"
 	},

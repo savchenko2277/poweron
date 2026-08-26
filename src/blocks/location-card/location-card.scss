@@ -1,0 +1,140 @@
+@use 'lib' as *;
+
+.location-card {
+	$self: &;
+
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	padding: fluid(28px, 20px);
+	cursor: pointer;
+
+	&__bg {
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		background: linear-gradient(223deg, #7A7A7D 0%, rgba(122, 122, 125, 0.4) 15%, var(--card-color) 32%);
+		transition: background var(--transition, 0.3s);
+		overflow: hidden;
+
+		/* Срез верха 29px + скругление низа 10px */
+		clip-path: polygon(0 0,
+				calc(100% - 29px) 0,
+				100% 25px,
+				100% calc(100% - 10px),
+				calc(100% - 10px) 100%,
+				0 100%);
+
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 2px;
+			background: var(--card-color);
+			z-index: 1;
+
+			clip-path: polygon(0 0,
+					calc(100% - 28px) 0,
+					100% 24px,
+					100% calc(100% - 8px),
+					calc(100% - 8px) 100%,
+					0 100%);
+		}
+	}
+
+	&__top {
+		position: relative;
+		z-index: 2;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: fluid(10px, 5px);
+		margin-bottom: fluid(16px, 12px);
+	}
+
+	&__location {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 4px;
+		color: var(--text-color-second);
+		background: var(--input-color);
+		padding: 5px 12px;
+		border-radius: 5px;
+		font-size: fluid(14px, 12px);
+
+		img {
+			width: 20px;
+			height: 20px;
+		}
+
+		&_main {}
+	}
+
+	&__status {
+		border-radius: 5px;
+		color: var(--text-color);
+		border: 1px solid var(--devider-color);
+		padding: 4px 12px;
+		font-size: fluid(14px, 12px);
+
+		&_main {
+			color: var(--orange);
+			border: 1px solid var(--orange);
+		}
+	}
+
+	&__title {
+		position: relative;
+		z-index: 2;
+		font-size: fluid(28px, 20px);
+		font-weight: 700;
+		margin-bottom: fluid(55px, 20px);
+	}
+
+	&__list {
+		position: relative;
+		z-index: 2;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 8px 28px;
+
+		@include media("<=sm") {
+			flex-direction: column;
+			align-items: start;
+		}
+	}
+
+	&__list-item {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 10px;
+
+		&::before {
+			content: '';
+			display: block;
+			width: 6px;
+			height: 6px;
+			background: var(--text-color);
+			border-radius: 50%;
+			transition: all var(--transition);
+		}
+	}
+
+	&:hover,
+	&.active {
+		#{$self}__bg {
+			background: linear-gradient(223deg, #FF5A00 0%, rgba(255, 90, 0, 0.4) 20%, var(--card-color) 35%);
+
+			&::before {
+				opacity: 1;
+			}
+		}
+
+		#{$self}__list-item::before {
+			background: var(--orange);
+		}
+	}
+}
