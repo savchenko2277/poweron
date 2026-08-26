@@ -17,6 +17,23 @@
 		border-bottom: 1px solid var(--devider-color);
 	}
 
+	&_info {
+		@include media("<=xs") {
+			margin-bottom: fluid(150px, 100px);
+			border-bottom: none;
+		}
+		#{$self}__text {
+			margin-bottom: 28px;
+			color: var(--text-color-second);
+			max-width: 501px;
+		}
+		#{$self}__container {
+			@include media("<=md") {
+				padding: 50px 0;
+			}
+		}
+	}
+
 	&__gradient {
 		position: absolute;
 		inset: 1px;
@@ -34,6 +51,75 @@
 
 		@include media("<=lg") {
 			display: none;
+		}
+	}
+
+	&__socials {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		max-width: 495px;
+
+		@include media("<=md") {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 10px;
+			max-width: 100%;
+		}
+	}
+
+	&__social {
+		position: relative;
+
+		@include flex-center;
+
+		flex-direction: row;
+		gap: 10px;
+		padding: 16px;
+		font-size: 18px;
+		font-weight: 700;
+
+		img {
+			width: fluid(24px, 20px);
+			height: fluid(24px, 20px);
+		}
+
+		@include media("<=xs") {
+			p {
+				display: none;
+			}
+		}
+	}
+
+	&__social-bg {
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		border-radius: 10px 0 0 10px;
+		transition: all var(--transition, 0.3s);
+
+		/* SVG с добаленным preserveAspectRatio='none' */
+		mask-image:
+			linear-gradient(#000, #000),
+			url("data:image/svg+xml;charset=utf-8,<svg width='35' height='58' viewBox='185 0 35 58' preserveAspectRatio='none' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M191.492 0C193.763 0 195.966 0.772807 197.739 2.19131L216.247 16.9976C218.619 18.8953 220 21.7684 220 24.8062V48C220 53.5228 215.523 58 210 58H185V0H191.492Z' fill='black'/></svg>");
+
+		mask-size: calc(100% - 33px) 100%, 35px 100%;
+		mask-position: left center, right center;
+		mask-repeat: no-repeat;
+		background: var(--devider-color);
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 1px;
+			background: var(--card-color);
+			border-radius: 9px 0 0 9px;
+			z-index: 1;
+
+			mask-image: inherit;
+			mask-size: inherit;
+			mask-position: inherit;
+			mask-repeat: inherit;
 		}
 	}
 

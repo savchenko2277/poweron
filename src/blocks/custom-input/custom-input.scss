@@ -13,4 +13,10 @@
 	&::placeholder {
 		color: var(--text-color-second);
 	}
+
+	@at-root textarea#{$self} {
+        resize: none;
+        min-height: 120px;
+    }
+	
 }

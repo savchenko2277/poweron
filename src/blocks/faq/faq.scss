@@ -1,0 +1,73 @@
+@use 'lib' as *;
+
+.faq {
+	$self: &;
+
+	margin-bottom: fluid(150px, 100px);
+
+	&__title {
+		margin-bottom: fluid(50px, 28px);
+	}
+
+	&__items {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	&__item {
+		background: var(--card-color);
+		border-radius: 10px;
+		display: grid;
+		grid-template-rows: max-content 0fr;
+		transition: all var(--transition);
+
+		&.active {
+			grid-template-rows: max-content 1fr;
+
+			#{$self}__item-head {
+				padding-bottom: fluid(28px, 20px);
+
+				svg {
+					transform: rotate(180deg);
+					stroke: var(--orange);
+				}
+			}
+		}
+	}
+
+	&__item-head {
+		padding: fluid(36px, 20px);
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+		font-size: fluid(24px, 18px);
+		font-weight: 700;
+		transition: all var(--transition);
+		cursor: pointer;
+
+		svg {
+			width: 20px;
+			height: 20px;
+			fill: transparent;
+			stroke: var(--text-color);
+			transition: all var(--transition);
+		}
+	}
+
+	&__item-content {
+		overflow: hidden;
+		padding: 0 fluid(36px, 20px);
+	}
+
+	&__item-text {
+		padding-bottom: fluid(36px, 20px);
+		font-size: fluid(20px, 14px);
+		color: var(--text-color-second);
+		max-width: 900px;
+		line-height: 1.4;
+	}
+
+}

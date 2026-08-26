@@ -17,6 +17,34 @@
 		border-bottom: 1px solid var(--devider-color);
 	}
 
+	&_alt {
+		@include media("<=xs") {
+			margin-bottom: fluid(150px, 100px);
+		}
+		#{$self}__title {
+			margin-bottom: fluid(32px, 20px);
+		}
+		#{$self}__text {
+			display: block;
+			margin-bottom: fluid(50px, 28px);
+
+			@include media("<=xs") {
+				color: var(--text-color);
+				max-width: 281px;
+			}
+		}
+		#{$self}__image {
+			height: 644px;
+			right: 20px;
+			top: -60px;
+			transform: none;
+
+			@include media("<=xs") {
+				height: auto;
+			}
+		}
+	}
+
 	&__gradient {
 
 	}

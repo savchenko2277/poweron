@@ -1,5 +1,15 @@
 @use 'lib' as *;
 
+html[data-theme="light"] {
+	.hero-page__title, .hero-page__text, .hero-page__breadcambs {
+		color: var(--bg-color);
+
+		@include media("<=xs") {
+			color: var(--text-color);
+		}
+	}
+}
+
 .hero-page {
 	$self: &;
 

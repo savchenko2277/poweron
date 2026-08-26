@@ -247,6 +247,26 @@ const initLocations = () => {
 	});
 }
 
+const initFaq = () => {
+	const items = document.querySelectorAll(".faq__item");
+	if (!items.length) return;
+
+	items.forEach((item) => {
+		const head = item.querySelector(".faq__item-head");
+		if (!head) return;
+
+		head.addEventListener("click", () => {
+			const isActive = item.classList.contains("active");
+
+			// Закрываем остальные пункты (аккордеон)
+			items.forEach((other) => other.classList.remove("active"));
+
+			// Открываем текущий пункт, если он был закрыт
+			if (!isActive) item.classList.add("active");
+		});
+	});
+};
+
 // Запуск функций
 window.addEventListener("load", () => {
 	setScrollbarWidth();
@@ -256,4 +276,5 @@ window.addEventListener("load", () => {
 	initFancybox();
 	initProductTabs();
 	initLocations();
+	initFaq();
 });
