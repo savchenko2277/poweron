@@ -5,9 +5,7 @@
 
 	margin-bottom: fluid(150px, 100px);
 
-	&__container {
-
-	}
+	&__container {}
 
 	&__title {
 		margin-bottom: fluid(50px, 28px);
@@ -43,14 +41,29 @@
 		}
 	}
 
-	&__card-title {
-		font-size: fluid(24px, 18px);
-		font-weight: 700;
+	&__card-content {
 		padding: fluid(28px, 20px) fluid(28px, 20px) 0 fluid(28px, 20px);
+		display: flex;
+		flex-direction: column;
+		gap: fluid(16px, 10px);
 		margin-bottom: 14px;
 
 		@include media("<=xs") {
 			padding: 20px 0 20px 20px;
+			margin-bottom: 0;
+		}
+	}
+
+	&__card-text {
+		font-size: fluid(16px, 14px);
+		color: var(--text-color-second);
+	}
+
+	&__card-title {
+		font-size: fluid(24px, 18px);
+		font-weight: 700;
+		
+		@include media("<=xs") {
 			margin-bottom: 0;
 		}
 	}

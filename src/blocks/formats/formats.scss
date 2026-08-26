@@ -1,0 +1,136 @@
+@use 'lib' as *;
+
+.formats {
+	$self: &;
+
+	margin-bottom: fluid(150px, 100px);
+
+	&__container {}
+
+	&__title {
+		margin-bottom: fluid(50px, 28px);
+
+		b {
+			color: var(--orange);
+		}
+	}
+
+	&__cards {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: fluid(20px, 10px);
+
+		@include media("<=xs") {
+			grid-template-columns: 100%;
+		}
+	}
+
+	&__card {
+		position: relative;
+		z-index: 1;
+		background: transparent;
+		padding: fluid(28px, 20px);
+
+		&-bg {
+			position: absolute;
+			inset: 0;
+			z-index: -1;
+			background: linear-gradient(223deg, #7A7A7D 0%, rgba(122, 122, 125, 0.4) 20%, var(--card-color, #161619) 45%);
+			transition: background var(--transition, 0.3s);
+
+			/* 
+             * Уменьшенный радиус (5px):
+             * Заменили 10px на 5px для более компактных и аккуратных углов
+             */
+			clip-path: polygon(0 0,
+					calc(100% - 68.5px) 0,
+					100% 57px,
+					100% calc(100% - 5px),
+					calc(100% - 5px) 100%,
+					5px 100%,
+					0 calc(100% - 5px));
+
+			&::after {
+				content: '';
+				position: absolute;
+				inset: 2px;
+				background: var(--card-color, #161619);
+				z-index: 1;
+
+				/* Внутренний контур с пропорциональным сдвигом (3px с учетом 2px бордера) */
+				clip-path: polygon(0 0,
+						calc(100% - 67.5px) 0,
+						100% 56px,
+						100% calc(100% - 3px),
+						calc(100% - 3px) 100%,
+						3px 100%,
+						0 calc(100% - 3px));
+			}
+
+			@include media("<=xs") {
+				/* На мобилке меняем контур среза под 28.5px x 25px с сохранением радиуса 10px */
+				clip-path: polygon(0 0,
+						calc(100% - 28.5px) 0,
+						100% 25px,
+						100% calc(100% - 10px),
+						calc(100% - 10px) 100%,
+						10px 100%,
+						0 calc(100% - 10px));
+
+				&::after {
+					clip-path: polygon(0 0,
+							calc(100% - 27.5px) 0,
+							100% 24px,
+							100% calc(100% - 8px),
+							calc(100% - 8px) 100%,
+							8px 100%,
+							0 calc(100% - 8px));
+				}
+			}
+		}
+
+		&:hover {
+
+			.formats__card-bg,
+			&__card-bg {
+				background: linear-gradient(223deg, #FF5A00 0%, rgba(255, 90, 0, 0.4) 25%, var(--card-color, #161619) 50%);
+			}
+		}
+	}
+
+	&__card-title {
+		font-weight: 700;
+		font-size: fluid(24px, 18px);
+		margin-bottom: fluid(28px, 20px);
+	}
+
+	&__card-bg {}
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: fluid(16px, 12px) 20px;
+
+		@include media("<=md") {
+			grid-template-columns: 100%;
+		}
+	}
+
+	&__list-item {
+		display: flex;
+		flex-direction: row;
+		gap: 10px;
+		font-size: fluid(16px, 14px);
+
+		&::before {
+			content: '';
+			display: block;
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			background: var(--orange);
+			margin-top: 8px;
+		}
+	}
+
+}

@@ -1,0 +1,100 @@
+@use 'lib' as *;
+
+.hero-page {
+	$self: &;
+
+	margin: 0 auto;
+	margin-bottom: 100px;
+	padding: 0 20px;
+
+	position: relative;
+	overflow: hidden;
+
+	@include media("<=xs") {
+		padding: 0;
+	}
+
+	&__container.container {
+		position: relative;
+		z-index: 1;
+		padding: 90px 0;
+
+		@include media("<=xs") {
+			padding-top: 30px;
+			padding-bottom: 0;
+			margin-bottom: 28px;
+		}
+	}
+
+	&__breadcambs {
+		margin-bottom: 16px;
+	}
+
+	&__title {
+		font-weight: 800;
+		font-size: fluid(60px, 32px);
+		text-transform: uppercase;
+		line-height: 1.1;
+		margin-bottom: fluid(36px, 20px);
+	}
+
+	&__text {
+		font-size: fluid(20px, 14px);
+		margin-bottom: fluid(73px, 28px);
+		max-width: 584px;
+		line-height: 1.4;
+
+		@include media("<=xs") {
+			color: var(--text-color-second);
+		}
+	}
+
+	&__buttons {
+		display: flex;
+		gap: 20px;
+
+		@include media("<=xs") {
+			flex-direction: column;
+			gap: 10px;
+		}
+	}
+
+	&__btn {
+
+	}
+
+	&__image {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 200px;
+			background: linear-gradient(180deg, rgba(11, 12, 13, 0) 0%, #0B0C0D 100%);
+		}
+	
+		img {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+
+			@include media("<=xs") {
+				object-position: 100% 50%;
+			}
+		}
+
+		@include media("<=xs") {
+			position: relative;
+			height: 248px;
+		}
+	}
+
+}

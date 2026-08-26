@@ -1,0 +1,109 @@
+@use 'lib' as *;
+
+.callback-biggest {
+	$self: &;
+
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	max-width: 1374px;
+	margin: 0 auto 150px;
+	background: var(--card-color);
+	border-radius: 10px;
+	overflow: hidden;
+
+	@include media("<=xs") {
+		margin-bottom: 0;
+		border-bottom: 1px solid var(--devider-color);
+	}
+
+	&__gradient {
+		position: absolute;
+		inset: 1px;
+		z-index: 0;
+		border-radius: 12px;
+		padding: 2px;
+		pointer-events: none;
+
+		background:
+			linear-gradient(231deg, #7A7A7D 0%, rgba(122, 122, 125, 0.4) 10%, transparent 28%),
+			linear-gradient(51deg, #7A7A7D 0%, rgba(122, 122, 125, 0.4) 12%, #161619 30%);
+
+		mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+		mask-composite: exclude;
+
+		@include media("<=lg") {
+			display: none;
+		}
+	}
+
+	&__container {
+		padding: 80px 0;
+		display: grid;
+		grid-template-columns: 1fr 598px;
+		gap: fluid(60px, 28px);
+
+		@include media("<=md") {
+			grid-template-columns: 100%;
+		}
+
+		@include media("<=xs") {
+			padding-bottom: 0;
+		}
+	}
+
+	&__about {}
+
+	&__title {
+		margin-bottom: fluid(28px, 20px);
+	}
+
+	&__text {
+		font-size: fluid(20px, 14px);
+	}
+
+	&__form {
+		position: relative;
+		z-index: 2;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+
+		@include media("<=xs") {
+			grid-template-columns: 100%;
+		}
+	}
+
+	&__label {
+		&:has(textarea) {
+			grid-column: 1 / span 2;
+
+			@include media("<=xs") {
+				grid-column: auto;
+			}
+		}
+	}
+
+	&__btn {
+		grid-column: 1 / span 2;
+
+		@include media("<=xs") {
+			grid-column: auto;
+		}
+	}
+
+	&__image {
+		position: absolute;
+		width: 495px;
+		bottom: -160px;
+		left: 80px;
+
+		img {}
+
+		@include media("<=xs") {
+			position: static;
+			width: 100%;
+		}
+	}
+
+}

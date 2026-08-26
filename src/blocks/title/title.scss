@@ -6,4 +6,9 @@
 	text-transform: uppercase;
 	font-weight: 700;
 	font-size: fluid(40px, 24px);
+
+	b {
+		font-weight: 700;
+		color: var(--orange);
+	}
 }

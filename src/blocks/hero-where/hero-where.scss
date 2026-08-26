@@ -1,5 +1,14 @@
 @use 'lib' as *;
 
+html[data-theme="light"] {
+	.hero-where {
+		background: var(--bg-color);
+	}
+	.hero-where::after {
+		display: none;
+	}
+}
+
 .hero-where {
 	$self: &;
 
@@ -11,7 +20,8 @@
 	&::after {
 		content: '';
 		position: absolute;
-		bottom: 0; left: 0;
+		bottom: 0;
+		left: 0;
 		width: 100%;
 		height: 83px;
 		background: linear-gradient(180deg, rgba(11, 12, 13, 0) 0%, #0B0C0D 100%);
