@@ -4,6 +4,7 @@
 	$self: &;
 
 	margin-bottom: fluid(150px, 100px);
+	overflow: hidden;
 
 	&__container {}
 
@@ -18,6 +19,10 @@
 
 		@include media("<=md") {
 			grid-template-columns: repeat(2, 1fr);
+		}
+
+		&.swiper {
+			overflow: visible;
 		}
 	}
 

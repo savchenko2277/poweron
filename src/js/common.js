@@ -90,6 +90,22 @@ const initSwipers = () => {
 			bulletActiveClass: "swiper-bullet-active"
 		}
 	});
+
+	new Swiper(".directions__cards", {
+		loop: true,
+		spaceBetween: 10,
+		slidesPerView: 2.05,
+
+		breakpoints: {
+			640: {
+				slidesPerView: 2
+			},
+			1024: {
+				slidesPerView: 4,
+				spaceBetween: 20
+			}
+		}
+	});
 }
 
 const initFancybox = () => {
