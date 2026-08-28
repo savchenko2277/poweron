@@ -11,6 +11,14 @@ html[data-theme="light"] {
 		}
 	}
 
+	.hero__advantages-item {
+		background: rgba($color: #000000, $alpha: 0.2);
+		@include media(">xs") {
+			color: var(--bg-color);
+		}
+	}
+
+	.hero__breadcambs,
 	.hero__title,
 	.hero__text {
 		color: var(--bg-color);
@@ -19,6 +27,7 @@ html[data-theme="light"] {
 			color: inherit;
 		}
 	}
+
 }
 
 .hero {
@@ -58,19 +67,16 @@ html[data-theme="light"] {
 		}
 
 		.hero__image {
-			@include media("<=xs") {
-				position: relative;
-
-				&::before {
-					display: block;
-					content: '';
-					position: absolute;
-					width: 100%;
-					height: 80px;
-					bottom: 0;
-					left: 0;
-					background: linear-gradient(180deg, rgba(11, 12, 13, 0) 0%, #0B0C0D 100%);
-				}
+			&::before {
+				display: block;
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 130px;
+				bottom: 0;
+				left: 0;
+				background: linear-gradient(180deg, rgba(11, 12, 13, 0) 0%, var(--bg-color) 100%);
+				z-index: 2;
 			}
 		}
 	}
@@ -80,7 +86,7 @@ html[data-theme="light"] {
 		grid-template-columns: repeat(4, 1fr);
 		gap: 10px;
 		position: relative;
-		z-index: 2;
+		z-index: 3;
 		padding-bottom: 50px;
 
 		@include media("<=md") {
