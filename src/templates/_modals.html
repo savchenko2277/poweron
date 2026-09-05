@@ -36,7 +36,8 @@
                     <p class="production-modal__side-text">
                         Короткий опрос поможет с выбором модели под ваш объект
                     </p>
-                    <button type="button" class="production-modal__side-btn button button_orange">
+                    <button type="button" class="production-modal__side-btn button button_orange"
+                        data-modal-open=".quiz-modal">
                         <span class="button__bg"></span>
                         Начать подбор
                     </button>
@@ -73,6 +74,455 @@
                     </ul>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="quiz-modal" data-scroll-padding>
+    <div class="quiz-modal__container container">
+        <form class="quiz-modal__content" data-modal-content>
+            <div class="quiz-modal__slide quiz-modal__slide_reversed active" data-quiz-step="1">
+
+                <div class="quiz-modal__step">
+                    <span class="quiz-modal__step-count">Шаг 1 из 6</span>
+                    <span class="quiz-modal__progress">
+                        <span class="quiz-modal__progress-fill" style="width: 16.6667%"></span>
+                    </span>
+                </div>
+
+                <h2 class="quiz-modal__title">Для какого объекта нужен генератор?</h2>
+
+                <p class="quiz-modal__desc">Выберите основной сценарий. Это поможет определить диапазон мощности и тип
+                    рекомендации.</p>
+
+                <div class="quiz-modal__options">
+                    <label class="quiz-modal__option">
+                        <input class="quiz-modal__option-input" type="radio" name="object" value="home">
+                        <span class="quiz-modal__option-radio"></span>
+                        <span class="quiz-modal__option-content">
+                            <span class="quiz-modal__option-title">Дом / коттедж</span>
+                            <span class="quiz-modal__option-text">Частный дом для постоянного проживания</span>
+                        </span>
+                    </label>
+
+                    <label class="quiz-modal__option">
+                        <input class="quiz-modal__option-input" type="radio" name="object" value="dacha" checked>
+                        <span class="quiz-modal__option-radio"></span>
+                        <span class="quiz-modal__option-content">
+                            <span class="quiz-modal__option-title">Дача</span>
+                            <span class="quiz-modal__option-text">Сезонное использование или базовый резерв</span>
+                        </span>
+                    </label>
+
+                    <label class="quiz-modal__option">
+                        <input class="quiz-modal__option-input" type="radio" name="object" value="business">
+                        <span class="quiz-modal__option-radio"></span>
+                        <span class="quiz-modal__option-content">
+                            <span class="quiz-modal__option-title">Бизнес</span>
+                            <span class="quiz-modal__option-text">Офис, склад, сервис, коммерческий объект</span>
+                        </span>
+                    </label>
+
+                    <label class="quiz-modal__option">
+                        <input class="quiz-modal__option-input" type="radio" name="object" value="project">
+                        <span class="quiz-modal__option-radio"></span>
+                        <span class="quiz-modal__option-content">
+                            <span class="quiz-modal__option-title">Объект по проекту</span>
+                            <span class="quiz-modal__option-text">Коттеджный посёлок, инженерная система, сложная
+                                схема</span>
+                        </span>
+                    </label>
+                </div>
+
+                <div class="quiz-modal__buttons">
+                    <button class="quiz-modal__next button button_grey" type="button">
+                        <span class="button__bg"></span>
+                        Далее
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="quiz-modal__slide" data-quiz-step="2">
+
+                <div class="quiz-modal__step">
+                    <span class="quiz-modal__step-count">Шаг 2 из 6</span>
+                    <span class="quiz-modal__progress">
+                        <span class="quiz-modal__progress-fill" style="width: 33.3333%"></span>
+                    </span>
+                </div>
+
+                <h2 class="quiz-modal__title">Что должно работать при отключении сети?</h2>
+
+                <p class="quiz-modal__desc">Не нужно считать ватты. Выберите ближайший по смыслу вариант.</p>
+
+                <div class="quiz-modal__options">
+                    <label class="quiz-modal__option">
+                        <input class="quiz-modal__option-input" type="radio" name="loads" value="essential">
+                        <span class="quiz-modal__option-radio"></span>
+                        <span class="quiz-modal__option-content">
+                            <span class="quiz-modal__option-title">Только важное</span>
+                            <span class="quiz-modal__option-text">Отопление, насосы, свет, связь</span>
+                        </span>
+                    </label>
+
+                    <label class="quiz-modal__option">
+                        <input class="quiz-modal__option-input" type="radio" name="loads" value="most-home" checked>
+                        <span class="quiz-modal__option-radio"></span>
+                        <span class="quiz-modal__option-content">
+                            <span class="quiz-modal__option-title">Большая часть дома</span>
+                            <span class="quiz-modal__option-text">Котельная, насосы, освещение, часть бытовой
+                                техники</span>
+                        </span>
+                    </label>
+
+                    <label class="quiz-modal__option">
+                        <input class="quiz-modal__option-input" type="radio" name="loads" value="almost-all">
+                        <span class="quiz-modal__option-radio"></span>
+                        <span class="quiz-modal__option-content">
+                            <span class="quiz-modal__option-title">Почти весь объект</span>
+                            <span class="quiz-modal__option-text">Несколько групп нагрузок и инженерные системы</span>
+                        </span>
+                    </label>
+
+                    <label class="quiz-modal__option">
+                        <input class="quiz-modal__option-input" type="radio" name="loads" value="commercial">
+                        <span class="quiz-modal__option-radio"></span>
+                        <span class="quiz-modal__option-content">
+                            <span class="quiz-modal__option-title">Коммерческие нагрузки</span>
+                            <span class="quiz-modal__option-text">Оборудование, офис, склад или сервис</span>
+                        </span>
+                    </label>
+                </div>
+
+                <div class="quiz-modal__buttons">
+                    <button class="quiz-modal__prev button button_grey button_reverse" type="button">
+                        <span class="button__bg"></span>
+                        Назад
+                    </button>
+                    <button class="quiz-modal__next button button_grey" type="button">
+                        <span class="button__bg"></span>
+                        Далее
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Шаг 3 -->
+            <div class="quiz-modal__slide" data-quiz-step="3">
+
+                <div class="quiz-modal__step">
+                    <span class="quiz-modal__step-count">Шаг 3 из 6</span>
+                    <span class="quiz-modal__progress">
+                        <span class="quiz-modal__progress-fill" style="width: 50%"></span>
+                    </span>
+                </div>
+
+                <h2 class="quiz-modal__title">Какая сеть на объекте?</h2>
+
+                <p class="quiz-modal__desc">От фазности зависит выбор однофазной или трёхфазной модели.</p>
+
+                <div class="quiz-modal__options">
+                    <label class="quiz-modal__option">
+                        <input class="quiz-modal__option-input" type="radio" name="voltage" value="220">
+                        <span class="quiz-modal__option-radio"></span>
+                        <span class="quiz-modal__option-content">
+                            <span class="quiz-modal__option-title">220 В</span>
+                            <span class="quiz-modal__option-text">Однофазная сеть</span>
+                        </span>
+                    </label>
+
+                    <label class="quiz-modal__option">
+                        <input class="quiz-modal__option-input" type="radio" name="voltage" value="380" checked>
+                        <span class="quiz-modal__option-radio"></span>
+                        <span class="quiz-modal__option-content">
+                            <span class="quiz-modal__option-title">380 В</span>
+                            <span class="quiz-modal__option-text">Трёхфазная сеть</span>
+                        </span>
+                    </label>
+
+                    <label class="quiz-modal__option quiz-modal__option_full">
+                        <input class="quiz-modal__option-input" type="radio" name="voltage" value="unknown">
+                        <span class="quiz-modal__option-radio"></span>
+                        <span class="quiz-modal__option-content">
+                            <span class="quiz-modal__option-title">Не знаю</span>
+                            <span class="quiz-modal__option-text">Специалист уточнит при консультации</span>
+                        </span>
+                    </label>
+                </div>
+
+                <div class="quiz-modal__buttons">
+                    <button class="quiz-modal__prev button button_grey button_reverse" type="button">
+                        <span class="button__bg"></span>
+                        Назад
+                    </button>
+                    <button class="quiz-modal__next button button_grey" type="button">
+                        <span class="button__bg"></span>
+                        Далее
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Шаг 4 -->
+            <div class="quiz-modal__slide" data-quiz-step="4">
+
+                <div class="quiz-modal__step">
+                    <span class="quiz-modal__step-count">Шаг 4 из 6</span>
+                    <span class="quiz-modal__progress">
+                        <span class="quiz-modal__progress-fill" style="width: 66.6667%"></span>
+                    </span>
+                </div>
+
+                <h2 class="quiz-modal__title">Какой газ доступен на объекте?</h2>
+
+                <p class="quiz-modal__desc">POWERON работает на природном или сжиженном газе. Если газа нет, подскажем
+                    возможные варианты резервного электроснабжения</p>
+
+                <div class="quiz-modal__options">
+                    <label class="quiz-modal__option">
+                        <input class="quiz-modal__option-input" type="radio" name="gas" value="mains">
+                        <span class="quiz-modal__option-radio"></span>
+                        <span class="quiz-modal__option-content">
+                            <span class="quiz-modal__option-title">Магистральный газ</span>
+                            <span class="quiz-modal__option-text">Подключение к сети газоснабжения</span>
+                        </span>
+                    </label>
+
+                    <label class="quiz-modal__option">
+                        <input class="quiz-modal__option-input" type="radio" name="gas" value="lpg" checked>
+                        <span class="quiz-modal__option-radio"></span>
+                        <span class="quiz-modal__option-content">
+                            <span class="quiz-modal__option-title">Сжиженный газ</span>
+                            <span class="quiz-modal__option-text">Газгольдер или баллоны по проекту</span>
+                        </span>
+                    </label>
+
+                    <label class="quiz-modal__option">
+                        <input class="quiz-modal__option-input" type="radio" name="gas" value="unknown">
+                        <span class="quiz-modal__option-radio"></span>
+                        <span class="quiz-modal__option-content">
+                            <span class="quiz-modal__option-title">Пока не знаю</span>
+                            <span class="quiz-modal__option-text">Нужно уточнить условия объекта</span>
+                        </span>
+                    </label>
+
+                    <label class="quiz-modal__option">
+                        <input class="quiz-modal__option-input" type="radio" name="gas" value="none">
+                        <span class="quiz-modal__option-radio"></span>
+                        <span class="quiz-modal__option-content">
+                            <span class="quiz-modal__option-title">Газа нет</span>
+                            <span class="quiz-modal__option-text">Подскажем возможные варианты</span>
+                        </span>
+                    </label>
+                </div>
+
+                <div class="quiz-modal__buttons">
+                    <button class="quiz-modal__prev button button_grey button_reverse" type="button">
+                        <span class="button__bg"></span>
+                        Назад
+                    </button>
+                    <button class="quiz-modal__next button button_grey" type="button">
+                        <span class="button__bg"></span>
+                        Далее
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Шаг 5 -->
+            <div class="quiz-modal__slide" data-quiz-step="5">
+
+                <div class="quiz-modal__step">
+                    <span class="quiz-modal__step-count">Шаг 5 из 6</span>
+                    <span class="quiz-modal__progress">
+                        <span class="quiz-modal__progress-fill" style="width: 83.3333%"></span>
+                    </span>
+                </div>
+
+                <h2 class="quiz-modal__title">Нужен автоматический запуск?</h2>
+
+                <p class="quiz-modal__desc">АВР запускает генератор при отключении сети и возвращает объект в штатный
+                    режим после восстановления питания.</p>
+
+                <div class="quiz-modal__options quiz-modal__options_single">
+                    <label class="quiz-modal__option">
+                        <input class="quiz-modal__option-input" type="radio" name="autostart" value="yes">
+                        <span class="quiz-modal__option-radio"></span>
+                        <span class="quiz-modal__option-content">
+                            <span class="quiz-modal__option-title">Да, нужен автозапуск</span>
+                            <span class="quiz-modal__option-text">Генератор должен включаться без участия
+                                человека</span>
+                        </span>
+                    </label>
+
+                    <label class="quiz-modal__option">
+                        <input class="quiz-modal__option-input" type="radio" name="autostart" value="no" checked>
+                        <span class="quiz-modal__option-radio"></span>
+                        <span class="quiz-modal__option-content">
+                            <span class="quiz-modal__option-title">Нет, достаточно ручного запуска</span>
+                            <span class="quiz-modal__option-text">Включение вручную допустимо</span>
+                        </span>
+                    </label>
+
+                    <label class="quiz-modal__option">
+                        <input class="quiz-modal__option-input" type="radio" name="autostart" value="unknown">
+                        <span class="quiz-modal__option-radio"></span>
+                        <span class="quiz-modal__option-content">
+                            <span class="quiz-modal__option-title">Не знаю</span>
+                            <span class="quiz-modal__option-text">Пусть специалист объяснит разницу</span>
+                        </span>
+                    </label>
+                </div>
+
+                <div class="quiz-modal__buttons">
+                    <button class="quiz-modal__prev button button_grey button_reverse" type="button">
+                        <span class="button__bg"></span>
+                        Назад
+                    </button>
+                    <button class="quiz-modal__next button button_grey" type="button">
+                        <span class="button__bg"></span>
+                        Далее
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Шаг 6 -->
+            <div class="quiz-modal__slide" data-quiz-step="6">
+
+                <div class="quiz-modal__step">
+                    <span class="quiz-modal__step-count quiz-modal__step-count_accent">Шаг 6 из 6</span>
+                    <span class="quiz-modal__progress">
+                        <span class="quiz-modal__progress-fill" style="width: 100%"></span>
+                    </span>
+                </div>
+
+                <h2 class="quiz-modal__title">Куда отправить предварительный подбор?</h2>
+
+                <p class="quiz-modal__desc">Укажите регион и телефон – инженер POWERON уточнит параметры объекта и
+                    предложит подходящий вариант.</p>
+
+                <div class="quiz-modal__form">
+                    <label class="custom-label">
+                        <h4 class="custom-label__title">Населенный пункт</h4>
+                        <input class="custom-label__input custom-input" type="text" placeholder="Например: Москва">
+                    </label>
+
+                    <label class="custom-label">
+                        <h4 class="custom-label__title">Имя</h4>
+                        <input class="custom-label__input custom-input" type="text" placeholder="Как к вам обращаться">
+                    </label>
+
+                    <label class="custom-label">
+                        <h4 class="custom-label__title">Телефон</h4>
+                        <input class="custom-label__input custom-input" type="tel"
+                            placeholder="+7 - ___ - (___) - __ - __">
+                    </label>
+
+                    <label class="custom-label">
+                        <h4 class="custom-label__title">Комментарий</h4>
+                        <input class="custom-label__input custom-input" type="text"
+                            placeholder="Коротко о задаче, если нужно">
+                    </label>
+                </div>
+
+                <label class="quiz-modal__consent">
+                    <input class="quiz-modal__consent-input" type="checkbox" checked>
+                    <span class="quiz-modal__consent-box"></span>
+                    <span class="quiz-modal__consent-text">
+                        Я даю своё <a href="#">согласие</a> на получение информации и рекламных предложений, в том числе
+                        рассылок рекламного характера и полезных материалов.<br>
+                        Оставляя заявку, вы подтверждаете, что принимаете <a href="policy.html">Пользовательское
+                            соглашение</a> и <a href="#">даёте согласие</a> на обработку персональных данных.
+                    </span>
+                </label>
+
+                <div class="quiz-modal__buttons quiz-modal__buttons_reverse">
+                    <button class="quiz-modal__prev button button_grey button_reverse" type="button">
+                        <span class="button__bg"></span>
+                        Назад
+                    </button>
+                    <button class="quiz-modal__submit button button_grey" type="button" data-modal-open=".result-modal">
+                        <span class="button__bg"></span>
+                        Получить подбор
+                    </button>
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div class="result-modal" data-scroll-padding>
+    <div class="result-modal__container container">
+        <div class="result-modal__content" data-modal-content>
+
+            <h2 class="result-modal__title">Предварительно подойдут</h2>
+
+            <p class="result-modal__desc">По вашим ответам можно рассмотреть несколько моделей. Финальный подбор зависит
+                от нагрузок, пусковых токов, фазности и схемы подключения.</p>
+
+            <div class="result-modal__products">
+                <div class="result-modal__product">
+                    <span class="result-modal__product-image"></span>
+                    <div class="result-modal__product-name">
+                        <span>POWERON</span>
+                        <b>GGC9000</b>
+                    </div>
+                    <ul class="result-modal__product-specs">
+                        <li class="result-modal__product-spec">9 кВт</li>
+                        <li class="result-modal__product-spec">1 фаза</li>
+                        <li class="result-modal__product-spec">Для расширенного резерва дома</li>
+                    </ul>
+                </div>
+
+                <div class="result-modal__product">
+                    <span class="result-modal__product-image"></span>
+                    <div class="result-modal__product-name">
+                        <span>POWERON</span>
+                        <b>GGC11500</b>
+                    </div>
+                    <ul class="result-modal__product-specs">
+                        <li class="result-modal__product-spec">11,5 кВт</li>
+                        <li class="result-modal__product-spec">1/3 фазы</li>
+                        <li class="result-modal__product-spec">Для увеличенного набора нагрузок</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="result-modal__note">Это не точный расчёт мощности. Инженер POWERON свяжется с вами в ближайшее
+                время и уточнит параметры объекта перед окончательной рекомендацией.</p>
+
+            <div class="result-modal__buttons">
+                <a href="hasgen.html" class="result-modal__btn button button_reverse button_grey">
+                    <span class="button__bg"></span>
+                    Смотреть модели
+                </a>
+                <a href="where.html" class="result-modal__btn button button_grey">
+                    <span class="button__bg"></span>
+                    Найти дилера
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="success-modal active" data-scroll-padding>
+    <div class="success-modal__container container">
+        <div class="success-modal__content" data-modal-content>
+
+            <h2 class="success-modal__title">Спасибо за заявку!</h2>
+
+            <p class="success-modal__desc">Наш менеджер свяжется с вами в ближайшее время!</p>
+
+            <a href="where.html" class="success-modal__btn button button_orange">
+                <span class="button__bg"></span>
+                Отлично
+            </a>
+
         </div>
     </div>
 </div>

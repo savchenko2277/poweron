@@ -1,0 +1,87 @@
+@use 'lib' as *;
+
+.success-modal {
+	$self: &;
+
+	position: fixed;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 30;
+	background: #0B0C0D95;
+
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transition: all var(--transition);
+
+	&.active {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: all;
+
+		#{$self}__content {
+			transform: scale(1);
+		}
+	}
+
+	&__container.container {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__content {
+		width: 100%;
+		max-width: 598px;
+		padding: 50px 36px;
+		background: var(--input-color);
+		border-radius: 10px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		transform: scale(0.95);
+		transition: transform var(--transition);
+
+		@include media("<=sm") {
+			padding: 20px;
+		}
+	}
+
+	&__title {
+		font-size: 40px;
+		font-weight: 700;
+		text-transform: uppercase;
+		margin-bottom: 20px;
+
+		@include media("<=sm") {
+			font-size: 24px;
+			margin-bottom: 12px;
+		}
+	}
+
+	&__desc {
+		font-size: 20px;
+		line-height: 28px;
+		color: var(--text-color-second);
+		margin-bottom: 36px;
+
+		@include media("<=sm") {
+			font-size: 14px;
+			line-height: 1.2;
+			margin-bottom: 24px;
+		}
+	}
+
+	&__btn {
+		.button__bg::before {
+			background: var(--input-color);
+		}
+		@include media("<=sm") {
+			width: 100%;
+			min-width: 0;
+		}
+	}
+}

@@ -81,4 +81,20 @@
             mask-size: calc(100% - 33px) 100%, 35px 100%;
         }
     }
+
+    &_reverse {
+        .button__bg {
+            border-radius: 0 10px 10px 0;
+            mask-position: right center, left center;
+
+            /* Зеркальная маска: угол с левой стороны */
+            mask-image:
+                linear-gradient(#000, #000),
+                url("data:image/svg+xml;charset=utf-8,<svg width='35' height='58' viewBox='185 0 35 58' preserveAspectRatio='none' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M213.508 0C211.237 0 209.034 0.772807 207.261 2.19131L188.753 16.9976C186.381 18.8953 185 21.7684 185 24.8062V48C185 53.5228 189.477 58 195 58H220V0H213.508Z' fill='black'/></svg>");
+
+            &::before {
+                border-radius: 0 9px 9px 0;
+            }
+        }
+    }
 }

@@ -43,6 +43,7 @@ export const driveModal = (props = {}) => {
 		constructor(props) {
 			this.props = {
 				open: '[data-modal-open]',
+				close: '[data-modal-close]',
 				contentAttr: 'data-modal-content',
 				active: 'active',
 				lock: 'scroll-lock',
@@ -101,6 +102,13 @@ export const driveModal = (props = {}) => {
 				if (button) {
 					e.preventDefault();
 					this.toggle(button);
+					return;
+				}
+
+				// клик по кнопке закрытия модалки
+				if (this.modal && e.target.closest(this.props.close)) {
+					e.preventDefault();
+					this.close();
 					return;
 				}
 

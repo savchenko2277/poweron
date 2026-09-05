@@ -267,14 +267,56 @@ const initFaq = () => {
 	});
 };
 
+const initQuiz = () => {
+	const modal = document.querySelector(".quiz-modal");
+	if (!modal) return;
+
+	const slides = [...modal.querySelectorAll(".quiz-modal__slide")];
+
+	const showSlide = (index, direction) => {
+		slides.forEach((slide, i) => {
+			if (i !== index) {
+				slide.classList.remove("active", "quiz-modal__slide_next", "quiz-modal__slide_prev");
+				return;
+			}
+
+			slide.classList.remove("quiz-modal__slide_next", "quiz-modal__slide_prev");
+			void slide.offsetWidth; // перезапуск анимации
+			slide.classList.add("active", direction === "next" ? "quiz-modal__slide_next" : "quiz-modal__slide_prev");
+		});
+	};
+
+	modal.addEventListener("click", (e) => {
+		const current = slides.findIndex((slide) => slide.classList.contains("active"));
+
+		if (e.target.closest(".quiz-modal__next") && current < slides.length - 1) {
+			showSlide(current + 1, "next");
+		}
+
+		if (e.target.closest(".quiz-modal__prev") && current > 0) {
+			showSlide(current - 1, "prev");
+		}
+	});
+};
+
 // Запуск функций
 window.addEventListener("load", () => {
 	setScrollbarWidth();
 	initHeader();
-	driveModal();
+	driveModal({
+		onOpen: (modal) => {
+			if (!modal.classList.contains("quiz-modal")) return;
+
+			modal.querySelectorAll(".quiz-modal__slide").forEach((slide, i) => {
+				slide.classList.remove("quiz-modal__slide_next", "quiz-modal__slide_prev");
+				slide.classList.toggle("active", i === 0);
+			});
+		},
+	});
 	initSwipers();
 	initFancybox();
 	initProductTabs();
 	initLocations();
 	initFaq();
+	initQuiz();
 });
